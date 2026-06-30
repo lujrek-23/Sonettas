@@ -141,7 +141,7 @@ class AboutContributorsRepository
                 client.get("https://api.github.com/repos/$owner/$repo/contributors?per_page=$perPage") {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)")
                     }
                 }
             return ContributorsNetworkResult(

@@ -209,7 +209,7 @@ class AboutAttributionRepository
                 client.get(GitHubCommitsUrl) {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)")
                     }
                     parameter("path", path)
                     parameter("per_page", GitHubCommitsPageSize)
@@ -226,7 +226,7 @@ class AboutAttributionRepository
                 client.get(GitHubTranslationResourceUrl) {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)")
                     }
                 }
             if (response.status.value !in SuccessStatusCodes) {
