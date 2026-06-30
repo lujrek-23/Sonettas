@@ -48,9 +48,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.sonettas.app.R
 import com.sonettas.app.ui.screens.OptionStats
+import com.sonettas.app.ui.theme.Gray100
+import com.sonettas.app.ui.theme.Gray400
+import com.sonettas.app.ui.theme.NearBlack
+import com.sonettas.app.ui.theme.Orange
+import com.sonettas.app.ui.theme.OrangeLight
+import com.sonettas.app.ui.theme.SonettasFontFamily
+import com.sonettas.app.ui.theme.SonettasRadius
+import com.sonettas.app.ui.theme.SonettasSpacing
+import com.sonettas.app.ui.theme.SonettasType
+import com.sonettas.app.ui.theme.White
 
 @Composable
 fun <E> ChipsRow(
@@ -65,10 +76,10 @@ fun <E> ChipsRow(
         modifier =
             modifier
                 .fillMaxWidth()
-                .padding(vertical = 8.dp)
+                .padding(vertical = SonettasSpacing.sm)
                 .horizontalScroll(rememberScrollState()),
     ) {
-        Spacer(Modifier.width(12.dp))
+        Spacer(Modifier.width(SonettasPadding.screen))
 
         chips.forEach { (value, label) ->
             val isSelected = currentValue == value
@@ -77,31 +88,42 @@ fun <E> ChipsRow(
             FilterChip(
                 selected = isSelected,
                 onClick = { onValueUpdate(value) },
-                label = { Text(label) },
+                label = {
+                    Text(
+                        text = label,
+                        fontFamily = SonettasFontFamily,
+                        fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
+                        style = SonettasType.body,
+                    )
+                },
                 leadingIcon = {
                     if (isSelected) {
                         Icon(
                             painter = painterResource(R.drawable.done),
                             contentDescription = null,
                             modifier = Modifier.size(FilterChipDefaults.IconSize),
+                            tint = Orange,
                         )
                     } else if (iconRes != null) {
                         Icon(
                             painter = painterResource(iconRes),
                             contentDescription = null,
                             modifier = Modifier.size(FilterChipDefaults.IconSize),
+                            tint = Gray400,
                         )
                     }
                 },
-                shape = RoundedCornerShape(16.dp),
+                shape = RoundedCornerShape(SonettasRadius.sm),
                 border = null,
-                colors =
-                    FilterChipDefaults.filterChipColors(
-                        containerColor = containerColor,
-                    ),
+                colors = FilterChipDefaults.filterChipColors(
+                    containerColor = Gray100,
+                    selectedContainerColor = OrangeLight,
+                    labelColor = NearBlack,
+                    selectedLabelColor = NearBlack,
+                ),
             )
 
-            Spacer(Modifier.width(8.dp))
+            Spacer(Modifier.width(SonettasSpacing.sm))
         }
     }
 }

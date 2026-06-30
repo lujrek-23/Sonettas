@@ -903,7 +903,7 @@ fun LibraryPinnedCollectionTile(
     accentColor: Color = MaterialTheme.colorScheme.primary,
 ) {
     Card(
-        shape = RoundedCornerShape(24.dp),
+        shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
         modifier = modifier,
     ) {

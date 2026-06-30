@@ -2,6 +2,11 @@
  * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
+ *
+ * Empty placeholder — Sonettas style.
+ * Per interaction-design.md: empty state is an invitation to act.
+ * Per polish.md: consistent with design tokens.
+ * Per colorize.md: orange for icon (state indicator), gray for text.
  */
 
 package com.sonettas.app.ui.component
@@ -17,8 +22,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,6 +33,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.sonettas.app.ui.theme.Gray400
+import com.sonettas.app.ui.theme.Gray50
+import com.sonettas.app.ui.theme.Orange
+import com.sonettas.app.ui.theme.SonettasFontFamily
+import com.sonettas.app.ui.theme.SonettasPadding
+import com.sonettas.app.ui.theme.SonettasRadius
+import com.sonettas.app.ui.theme.SonettasSpacing
+import com.sonettas.app.ui.theme.SonettasType
 
 @Composable
 fun EmptyPlaceholder(
@@ -38,38 +50,38 @@ fun EmptyPlaceholder(
 ) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier =
-            modifier
-                .fillMaxSize()
-                .padding(horizontal = 24.dp, vertical = 48.dp),
+        modifier = modifier
+            .fillMaxSize()
+            .padding(horizontal = SonettasPadding.screen, vertical = SonettasSpacing.xxxl),
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
+            // Rounded square icon container (NOT circle — Sonettas uses 12dp radius)
             Box(
                 contentAlignment = Alignment.Center,
-                modifier =
-                    Modifier
-                        .size(96.dp)
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.06f)),
+                modifier = Modifier
+                    .size(80.dp)
+                    .clip(RoundedCornerShape(SonettasRadius.md))
+                    .background(Orange.copy(alpha = 0.08f)),
             ) {
                 Image(
                     painter = painterResource(icon),
                     contentDescription = null,
-                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)),
-                    modifier = Modifier.size(48.dp),
+                    colorFilter = ColorFilter.tint(Orange.copy(alpha = 0.6f)),
+                    modifier = Modifier.size(36.dp),
                 )
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(SonettasSpacing.lg))
 
             Text(
                 text = text,
-                style = MaterialTheme.typography.titleMedium,
+                style = SonettasType.body,
+                fontFamily = SonettasFontFamily,
                 fontWeight = FontWeight.Medium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                color = Gray400,
                 textAlign = TextAlign.Center,
             )
         }
