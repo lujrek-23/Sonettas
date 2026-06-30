@@ -138,15 +138,13 @@ private fun buildTypography(fontFamily: FontFamily) =
             ),
     )
 
-val SonettasBodyFamily = FontFamily(Font(R.font.dm_sans_variable))
-val SonettasDisplayFamily = FontFamily(Font(R.font.fraunces_variable))
-val AppTypography = buildTypography(SonettasBodyFamily)
+val SonettasFontFamily = FontFamily(Font(R.font.plus_jakarta_sans_variable))
+val AppTypography = buildTypography(SonettasFontFamily)
 val SystemTypography = buildTypography(FontFamily.Default)
 
 fun typographyFor(fontFamily: FontFamily) = buildTypography(fontFamily)
 
 @Composable
 fun rememberSonettasLyricsFontFamily(): FontFamily {
-    return remember { SonettasDisplayFamily }
+    return remember { SonettasFontFamily }
 }
-

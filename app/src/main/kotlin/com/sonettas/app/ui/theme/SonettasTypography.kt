@@ -3,9 +3,15 @@
  * © Huanime Company
  * GPL-3.0 License
  *
- * Typography — Fraunces (display) + DM Sans (body).
- * Different from Sonettas (Newsreader + Spline Sans).
- * Fraunces is more expressive, DM Sans is more geometric.
+ * Typography — Plus Jakarta Sans (single family, all roles).
+ * Per brand.md: reject reflex defaults (Fraunces, DM Sans, Inter).
+ * Plus Jakarta Sans is NOT on the reject list — distinctive, warm, geometric.
+ *
+ * 4 sizes, 2 weights per role:
+ * - Display: ExtraBold (800) — hero, screen titles
+ * - Body: Medium (500) — primary text
+ * - Body: Regular (400) — secondary text
+ * - Label: Bold (700) — section headers, buttons
  */
 
 package com.sonettas.app.ui.theme
@@ -17,99 +23,101 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.sonettas.app.R
 
-// Font families — DIFFERENT from Sonettas
-val SonettasDisplayFamily = FontFamily(
-    Font(R.font.fraunces_variable, FontWeight.Normal),
-    Font(R.font.fraunces_variable, FontWeight.SemiBold),
-    Font(R.font.fraunces_variable, FontWeight.Bold),
+// Single font family — Plus Jakarta Sans for ALL roles
+val SonettasFontFamily = FontFamily(
+    Font(R.font.plus_jakarta_sans_variable, FontWeight.Normal),    // 400
+    Font(R.font.plus_jakarta_sans_variable, FontWeight.Medium),    // 500
+    Font(R.font.plus_jakarta_sans_variable, FontWeight.SemiBold),  // 600
+    Font(R.font.plus_jakarta_sans_variable, FontWeight.Bold),      // 700
+    Font(R.font.plus_jakarta_sans_variable, FontWeight.ExtraBold), // 800
 )
 
-val SonettasBodyFamily = FontFamily(
-    Font(R.font.dm_sans_variable, FontWeight.Normal),
-    Font(R.font.dm_sans_variable, FontWeight.Medium),
-    Font(R.font.dm_sans_variable, FontWeight.SemiBold),
-    Font(R.font.dm_sans_variable, FontWeight.Bold),
-)
-
-val SonettasMonoFamily = FontFamily(
-    Font(R.font.dm_mono_variable, FontWeight.Normal),
-    Font(R.font.dm_mono_variable, FontWeight.Medium),
-)
+// Alias for display (same family, different usage context)
+val SonettasFontFamily = SonettasFontFamily
+val SonettasFontFamily = SonettasFontFamily
+val SonettasFontFamily = SonettasFontFamily
 
 object SonettasType {
-    // ── Display (Fraunces) — bolder, more expressive than Sonettas ────────
+    // ── Display — ExtraBold, tight tracking ──────────────────────────────
     val hero = TextStyle(
-        fontFamily = SonettasDisplayFamily,
-        fontWeight = FontWeight.Bold,
-        fontSize = 48.sp,
-        letterSpacing = (-1).sp,  // Tight tracking (Sonettas uses +2sp)
-        lineHeight = 52.sp,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 42.sp,
+        letterSpacing = (-1.5).sp,
+        lineHeight = 48.sp,
     )
 
     val titleLarge = TextStyle(
-        fontFamily = SonettasDisplayFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 28.sp,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 26.sp,
         letterSpacing = (-0.5).sp,
-        lineHeight = 34.sp,
+        lineHeight = 32.sp,
     )
 
     val title = TextStyle(
-        fontFamily = SonettasDisplayFamily,
+        fontFamily = SonettasFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 20.sp,
+        fontSize = 18.sp,
         letterSpacing = 0.sp,
-        lineHeight = 26.sp,
+        lineHeight = 24.sp,
     )
 
-    // ── Body (DM Sans) — geometric, clean (Sonettas uses Spline Sans) ─────
+    // ── Body — Medium/Regular ────────────────────────────────────────────
     val bodyLarge = TextStyle(
-        fontFamily = SonettasBodyFamily,
-        fontWeight = FontWeight.Normal,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
         letterSpacing = 0.sp,
         lineHeight = 24.sp,
     )
 
     val body = TextStyle(
-        fontFamily = SonettasBodyFamily,
-        fontWeight = FontWeight.Normal,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.Regular,
         fontSize = 14.sp,
         letterSpacing = 0.sp,
         lineHeight = 20.sp,
     )
 
     val bodyBold = TextStyle(
-        fontFamily = SonettasBodyFamily,
+        fontFamily = SonettasFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
         letterSpacing = 0.sp,
         lineHeight = 20.sp,
     )
 
-    // ── Label — BOLD sans, NOT letter-spaced eyebrow like Sonettas ────────
+    // ── Label — Bold, tight ──────────────────────────────────────────────
     val label = TextStyle(
-        fontFamily = SonettasBodyFamily,
+        fontFamily = SonettasFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 12.sp,
-        letterSpacing = 0.5.sp,
+        letterSpacing = 0.3.sp,
         lineHeight = 16.sp,
     )
 
     val caption = TextStyle(
-        fontFamily = SonettasBodyFamily,
-        fontWeight = FontWeight.Normal,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.Regular,
         fontSize = 12.sp,
         letterSpacing = 0.sp,
         lineHeight = 16.sp,
     )
 
-    // ── Mono ─────────────────────────────────────────────────────────────
+    // ── Mono (same family, for data) ─────────────────────────────────────
     val mono = TextStyle(
-        fontFamily = SonettasMonoFamily,
-        fontWeight = FontWeight.Normal,
+        fontFamily = SonettasFontFamily,
+        fontWeight = FontWeight.Medium,
         fontSize = 13.sp,
         letterSpacing = 0.sp,
         lineHeight = 18.sp,
     )
+}
+
+object SonettasTextOpacity {
+    const val Primary = 1.0f
+    const val Body = 0.88f
+    const val Secondary = 0.60f
+    const val Tertiary = 0.38f
 }

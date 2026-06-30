@@ -163,7 +163,7 @@ fun SonettasSplashScreen(
                             fontWeight = FontWeight.Normal,
                             color = Stone,
                             letterSpacing = 3.sp,
-                            fontFamily = SonettasDisplayFamily,
+                            fontFamily = SonettasFontFamily,
                         )
                         Spacer(modifier = Modifier.height(20.dp))
 
@@ -174,7 +174,7 @@ fun SonettasSplashScreen(
                             fontWeight = FontWeight.Medium,
                             color = Ink,
                             letterSpacing = 2.sp,
-                            fontFamily = SonettasDisplayFamily,
+                            fontFamily = SonettasFontFamily,
                             fontStyle = FontStyle.Normal,
                         )
                         Spacer(modifier = Modifier.height(16.dp))
@@ -196,7 +196,7 @@ fun SonettasSplashScreen(
                             fontWeight = FontWeight.Normal,
                             color = Stone,
                             letterSpacing = 3.sp,
-                            fontFamily = SonettasDisplayFamily,
+                            fontFamily = SonettasFontFamily,
                         )
                     }
                 }

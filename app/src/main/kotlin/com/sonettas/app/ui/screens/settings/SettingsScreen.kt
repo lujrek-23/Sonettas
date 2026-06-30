@@ -41,7 +41,7 @@ import androidx.navigation.NavController
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
 import com.sonettas.app.ui.component.IconButton
-import com.sonettas.app.ui.theme.SonettasDisplayFamily
+import com.sonettas.app.ui.theme.SonettasFontFamily
 import com.sonettas.app.ui.theme.SonettasType
 import com.sonettas.app.ui.utils.backToMain
 
@@ -76,7 +76,7 @@ fun SettingsScreen(
                     Text(
                         text = "Pengaturan",
                         style = SonettasType.titleLarge,
-                        fontFamily = SonettasDisplayFamily,
+                        fontFamily = SonettasFontFamily,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
