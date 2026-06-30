@@ -9,9 +9,9 @@ package com.sonettas.app
 import android.app.Application
 import android.content.Context
 import androidx.datastore.preferences.core.edit
-import com.sonettas.app.constants.dataStore
 import com.sonettas.app.utils.clearPlaybackAuthSession
 import com.sonettas.app.utils.clearPlaybackWebAuthSession
+import com.sonettas.app.utils.dataStore
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
