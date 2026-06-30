@@ -90,4 +90,10 @@ fun SonettasApp() {
             }
         }
     }
+
+    companion object {
+        const val ACTION_SEARCH = "com.sonettas.app.action.SEARCH"
+        const val ACTION_LIBRARY = "com.sonettas.app.action.LIBRARY"
+        const val ACTION_AOD_MODE = "com.sonettas.app.action.AOD_MODE"
+    }
 }
