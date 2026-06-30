@@ -63,10 +63,10 @@ import com.sonettas.app.db.entities.SongWithStats
 import com.sonettas.app.db.entities.TagEntity
 import com.sonettas.app.extensions.reversed
 import com.sonettas.app.extensions.toSQLiteQuery
-import com.sonettas.app.innertube.models.PlaylistItem
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.pages.AlbumPage
-import com.sonettas.app.innertube.pages.ArtistPage
+import moe.rukamori.archivetune.innertube.models.PlaylistItem
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.pages.AlbumPage
+import moe.rukamori.archivetune.innertube.pages.ArtistPage
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.ui.utils.resize

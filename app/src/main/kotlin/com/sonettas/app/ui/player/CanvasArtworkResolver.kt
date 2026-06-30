@@ -8,8 +8,8 @@ package com.sonettas.app.ui.player
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.sonettas.app.canvas.ArchiveTuneCanvas as SonettasCanvas
-import com.sonettas.app.canvas.models.CanvasArtwork
+import moe.rukamori.archivetune.canvas.ArchiveTuneCanvas as SonettasCanvas
+import moe.rukamori.archivetune.canvas.models.CanvasArtwork
 import timber.log.Timber
 
 internal suspend fun resolveCanvasArtworkForPlayback(

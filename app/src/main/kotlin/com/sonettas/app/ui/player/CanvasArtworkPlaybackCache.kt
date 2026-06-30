@@ -24,8 +24,8 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.json.Json
-import com.sonettas.app.canvas.models.CanvasArtwork
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.canvas.models.CanvasArtwork
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.storage.StorageFolderKind
 import com.sonettas.app.storage.StorageLocationRepository
 import com.sonettas.app.utils.StreamClientUtils

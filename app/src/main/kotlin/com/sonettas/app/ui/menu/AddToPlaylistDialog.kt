@@ -89,8 +89,8 @@ import com.sonettas.app.LocalDatabase
 import com.sonettas.app.R
 import com.sonettas.app.constants.InnerTubeCookieKey
 import com.sonettas.app.db.entities.Playlist
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.utils.hasYouTubeLoginCookie
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.utils.hasYouTubeLoginCookie
 import com.sonettas.app.ui.component.CreatePlaylistDialog
 import com.sonettas.app.ui.component.DefaultDialog
 import com.sonettas.app.ui.component.PlaylistListItem

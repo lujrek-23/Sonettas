@@ -11,11 +11,11 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.AlbumItem
-import com.sonettas.app.innertube.models.ArtistItem
-import com.sonettas.app.innertube.models.PlaylistItem
-import com.sonettas.app.innertube.utils.completed
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.AlbumItem
+import moe.rukamori.archivetune.innertube.models.ArtistItem
+import moe.rukamori.archivetune.innertube.models.PlaylistItem
+import moe.rukamori.archivetune.innertube.utils.completed
 import com.sonettas.app.utils.reportException
 import javax.inject.Inject
 

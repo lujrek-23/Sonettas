@@ -102,9 +102,9 @@ import com.sonettas.app.db.entities.EventWithSong
 import com.sonettas.app.extensions.metadata
 import com.sonettas.app.extensions.toMediaItem
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.pages.HistoryPage
-import com.sonettas.app.innertube.utils.hasYouTubeLoginCookie
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.pages.HistoryPage
+import moe.rukamori.archivetune.innertube.utils.hasYouTubeLoginCookie
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.ListQueue
 import com.sonettas.app.playback.queues.YouTubeQueue
@@ -764,8 +764,8 @@ private fun RemoteHistoryFeed(
     activeMediaId: String?,
     navController: NavController,
     onRetry: () -> Unit,
-    onSongMenu: (com.sonettas.app.innertube.models.SongItem) -> Unit,
-    onSongClick: (com.sonettas.app.innertube.models.SongItem) -> Unit,
+    onSongMenu: (moe.rukamori.archivetune.innertube.models.SongItem) -> Unit,
+    onSongClick: (moe.rukamori.archivetune.innertube.models.SongItem) -> Unit,
 ) {
     LazyColumn(
         state = listState,

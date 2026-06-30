@@ -122,8 +122,8 @@ import com.sonettas.app.db.entities.PlaylistSongMap
 import com.sonettas.app.extensions.metadata
 import com.sonettas.app.extensions.toMediaItem
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.models.WatchEndpoint
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.models.WatchEndpoint
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.YouTubeQueue
 import com.sonettas.app.ui.component.DraggableScrollbar

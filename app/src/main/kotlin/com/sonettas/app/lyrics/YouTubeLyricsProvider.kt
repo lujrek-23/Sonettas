@@ -7,8 +7,8 @@
 package com.sonettas.app.lyrics
 
 import android.content.Context
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.WatchEndpoint
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.WatchEndpoint
 
 object YouTubeLyricsProvider : LyricsProvider {
     override val name = "YouTube Music"

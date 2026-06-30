@@ -74,7 +74,7 @@ import com.sonettas.app.extensions.filterExplicit
 import com.sonettas.app.extensions.filterExplicitAlbums
 import com.sonettas.app.extensions.reversed
 import com.sonettas.app.extensions.toEnum
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.library.LibraryTopMix
 import com.sonettas.app.library.ObserveLibraryTopMixesUseCase
 import com.sonettas.app.library.RefreshLibraryTopMixesResult

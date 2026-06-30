@@ -61,10 +61,10 @@ import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.models.AlbumItem
-import com.sonettas.app.innertube.models.ArtistItem
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.models.WatchEndpoint
+import moe.rukamori.archivetune.innertube.models.AlbumItem
+import moe.rukamori.archivetune.innertube.models.ArtistItem
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.models.WatchEndpoint
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.YouTubeQueue
 import com.sonettas.app.search.SearchDiscoveryUiModel

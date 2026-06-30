@@ -93,8 +93,8 @@ import com.sonettas.app.constants.PreferredLyricsProvider
 import com.sonettas.app.constants.PreloadQueueLyricsEnabledKey
 import com.sonettas.app.constants.QueueLyricsPreloadCountKey
 import com.sonettas.app.constants.deserializeLyricsProviderOrder
-import com.sonettas.app.paxsenix.models.PaxsenixStats
-import com.sonettas.app.paxsenix.models.ProviderStats
+import moe.rukamori.archivetune.paxsenix.models.PaxsenixStats
+import moe.rukamori.archivetune.paxsenix.models.ProviderStats
 import com.sonettas.app.ui.component.ActionPromptDialog
 import com.sonettas.app.ui.component.DefaultDialog
 import com.sonettas.app.ui.component.EnumListPreference

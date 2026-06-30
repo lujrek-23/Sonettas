@@ -11,8 +11,8 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.pages.MoodAndGenres
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.pages.MoodAndGenres
 import com.sonettas.app.utils.reportException
 import javax.inject.Inject
 

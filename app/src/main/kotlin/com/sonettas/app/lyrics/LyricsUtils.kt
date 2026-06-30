@@ -11,7 +11,7 @@ import android.text.format.DateUtils
 import com.atilika.kuromoji.ipadic.Tokenizer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.sonettas.app.betterlyrics.TTMLParser
+import moe.rukamori.archivetune.betterlyrics.TTMLParser
 import com.sonettas.app.db.entities.LyricsEntity
 import java.lang.Character.UnicodeScript
 

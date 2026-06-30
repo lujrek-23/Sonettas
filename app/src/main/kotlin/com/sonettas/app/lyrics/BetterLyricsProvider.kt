@@ -8,7 +8,7 @@ package com.sonettas.app.lyrics
 
 import android.content.Context
 import android.util.Log
-import com.sonettas.app.betterlyrics.BetterLyrics
+import moe.rukamori.archivetune.betterlyrics.BetterLyrics
 import com.sonettas.app.constants.EnableBetterLyricsKey
 import com.sonettas.app.utils.GlobalLog
 import com.sonettas.app.utils.dataStore

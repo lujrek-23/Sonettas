@@ -57,8 +57,8 @@ import com.sonettas.app.R
 import com.sonettas.app.constants.ListThumbnailSize
 import com.sonettas.app.db.entities.Playlist
 import com.sonettas.app.db.entities.Song
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.SongItem
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.ui.component.CreatePlaylistDialog
 import com.sonettas.app.ui.component.DefaultDialog

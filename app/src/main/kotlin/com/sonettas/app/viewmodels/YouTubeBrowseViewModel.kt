@@ -16,8 +16,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import com.sonettas.app.constants.HideExplicitKey
 import com.sonettas.app.constants.HideVideoKey
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.pages.BrowseResult
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.pages.BrowseResult
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 import com.sonettas.app.utils.reportException

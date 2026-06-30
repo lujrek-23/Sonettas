@@ -56,8 +56,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.BrowseEndpoint
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.BrowseEndpoint
 import com.sonettas.app.ui.component.NavigationTitle
 import com.sonettas.app.ui.component.shimmer.ShimmerHost
 import com.sonettas.app.ui.component.shimmer.TextPlaceholder

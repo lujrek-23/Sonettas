@@ -12,28 +12,28 @@ import io.ktor.client.plugins.ClientRequestException
 import io.ktor.http.HttpStatusCode
 import com.sonettas.app.constants.AudioQuality
 import com.sonettas.app.constants.PlayerStreamClient
-import com.sonettas.app.innertube.NewPipeUtils
-import com.sonettas.app.innertube.PlaybackAuthState
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.YouTubeClient
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_MUSIC
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_TESTSUITE
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_UNPLUGGED
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.IOS
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.IOS_MUSIC
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.IPADOS
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.MOBILE
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.TVHTML5
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.VISIONOS
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.WEB
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.WEB_CREATOR
-import com.sonettas.app.innertube.models.YouTubeClient.Companion.WEB_REMIX
-import com.sonettas.app.innertube.models.response.PlayerResponse
+import moe.rukamori.archivetune.innertube.NewPipeUtils
+import moe.rukamori.archivetune.innertube.PlaybackAuthState
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.YouTubeClient
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_MUSIC
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_TESTSUITE
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_UNPLUGGED
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.IOS
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.IOS_MUSIC
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.IPADOS
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.MOBILE
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.TVHTML5
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.VISIONOS
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.WEB
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.WEB_CREATOR
+import moe.rukamori.archivetune.innertube.models.YouTubeClient.Companion.WEB_REMIX
+import moe.rukamori.archivetune.innertube.models.response.PlayerResponse
 import com.sonettas.app.utils.potoken.BotGuardTokenGenerator
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
@@ -133,7 +133,7 @@ object YTPlayerUtils {
      * Do not use other clients for this because it can result in inconsistent metadata.
      * For example other clients can have different normalization targets (loudnessDb).
      *
-     * [com.sonettas.app.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
+     * [moe.rukamori.archivetune.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
      * - the correct metadata (like loudnessDb)
      * - premium formats
      */

@@ -41,7 +41,7 @@ import com.sonettas.app.constants.AccountNameKey
 import com.sonettas.app.constants.DataSyncIdKey
 import com.sonettas.app.constants.InnerTubeCookieKey
 import com.sonettas.app.constants.VisitorDataKey
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.utils.backToMain
 import com.sonettas.app.utils.PreferenceStore

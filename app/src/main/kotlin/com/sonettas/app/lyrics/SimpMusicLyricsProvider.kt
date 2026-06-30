@@ -8,7 +8,7 @@ package com.sonettas.app.lyrics
 
 import android.content.Context
 import com.sonettas.app.constants.EnableSimpMusicLyricsKey
-import com.sonettas.app.simpmusic.SimpMusicLyrics
+import moe.rukamori.archivetune.simpmusic.SimpMusicLyrics
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 

@@ -84,8 +84,8 @@ import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.db.entities.FormatEntity
 import com.sonettas.app.db.entities.Song
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.MediaInfo
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.MediaInfo
 import com.sonettas.app.ui.component.LocalBottomSheetPageState
 
 private enum class MediaInfoTab(

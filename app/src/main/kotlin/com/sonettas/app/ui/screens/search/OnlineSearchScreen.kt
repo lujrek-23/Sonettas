@@ -42,7 +42,7 @@ import com.sonettas.app.LocalDatabase
 import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.models.*
+import moe.rukamori.archivetune.innertube.models.*
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.YouTubeQueue
 import com.sonettas.app.ui.component.LocalMenuState

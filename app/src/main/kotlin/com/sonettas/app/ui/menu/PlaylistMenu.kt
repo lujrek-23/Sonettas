@@ -71,7 +71,7 @@ import com.sonettas.app.db.entities.Song
 import com.sonettas.app.extensions.isSyncEnabled
 import com.sonettas.app.extensions.isUserLoggedIn
 import com.sonettas.app.extensions.toMediaItem
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.playback.ExoDownloadService
 import com.sonettas.app.playback.queues.ListQueue
 import com.sonettas.app.playback.queues.YouTubeQueue

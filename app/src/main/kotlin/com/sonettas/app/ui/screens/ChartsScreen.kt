@@ -37,8 +37,8 @@ import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.constants.ListItemHeight
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.models.WatchEndpoint
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.models.WatchEndpoint
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.YouTubeQueue
 import com.sonettas.app.ui.component.IconButton

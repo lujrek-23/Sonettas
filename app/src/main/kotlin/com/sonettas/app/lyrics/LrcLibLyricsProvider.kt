@@ -8,7 +8,7 @@ package com.sonettas.app.lyrics
 
 import android.content.Context
 import com.sonettas.app.constants.EnableLrcLibKey
-import com.sonettas.app.lrclib.LrcLib
+import moe.rukamori.archivetune.lrclib.LrcLib
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 

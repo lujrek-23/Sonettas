@@ -123,8 +123,8 @@ import com.sonettas.app.constants.SelectedYtmPlaylistsKey
 import com.sonettas.app.constants.UseLoginForBrowse
 import com.sonettas.app.constants.VisitorDataKey
 import com.sonettas.app.constants.YtmSyncKey
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.utils.hasYouTubeLoginCookie
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.utils.hasYouTubeLoginCookie
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.component.InfoLabel
 import com.sonettas.app.ui.component.TextFieldDialog

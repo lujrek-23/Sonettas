@@ -219,11 +219,11 @@ import com.sonettas.app.db.entities.Playlist
 import com.sonettas.app.db.entities.SearchHistory
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.extensions.toMediaItem
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.AlbumItem
-import com.sonettas.app.innertube.models.ArtistItem
-import com.sonettas.app.innertube.models.PlaylistItem
-import com.sonettas.app.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.AlbumItem
+import moe.rukamori.archivetune.innertube.models.ArtistItem
+import moe.rukamori.archivetune.innertube.models.PlaylistItem
+import moe.rukamori.archivetune.innertube.models.SongItem
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.musicrecognition.ACTION_MUSIC_RECOGNITION
 import com.sonettas.app.musicrecognition.MusicRecognitionRoute

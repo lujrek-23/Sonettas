@@ -6,7 +6,7 @@
 
 package com.sonettas.app.utils
 
-import com.sonettas.app.innertube.models.YouTubeClient
+import moe.rukamori.archivetune.innertube.models.YouTubeClient
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.Request

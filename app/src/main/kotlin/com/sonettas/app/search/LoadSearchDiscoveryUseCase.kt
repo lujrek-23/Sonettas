@@ -4,10 +4,10 @@ package com.sonettas.app.search
 
 import androidx.compose.runtime.Immutable
 import com.google.common.collect.ImmutableList
-import com.sonettas.app.innertube.models.AlbumItem
-import com.sonettas.app.innertube.models.ArtistItem
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.pages.MoodAndGenres
+import moe.rukamori.archivetune.innertube.models.AlbumItem
+import moe.rukamori.archivetune.innertube.models.ArtistItem
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.pages.MoodAndGenres
 import com.sonettas.app.repository.SearchDiscoveryRepository
 import javax.inject.Inject
 

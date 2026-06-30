@@ -125,8 +125,8 @@ import com.sonettas.app.constants.ExternalDownloaderEnabledKey
 import com.sonettas.app.constants.ExternalDownloaderPackageKey
 import com.sonettas.app.constants.ListItemHeight
 import com.sonettas.app.constants.SpeedDialSongIdsKey
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.WatchEndpoint
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.WatchEndpoint
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.playback.EqCapabilities
 import com.sonettas.app.playback.EqProfile

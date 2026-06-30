@@ -137,9 +137,9 @@ import com.sonettas.app.db.entities.PlaylistSongMap
 import com.sonettas.app.extensions.move
 import com.sonettas.app.extensions.toMediaItem
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.SongItem
-import com.sonettas.app.innertube.utils.completed
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.utils.completed
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.queues.ListQueue
 import com.sonettas.app.playback.queues.LocalMixQueue

@@ -16,10 +16,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import com.sonettas.app.constants.HideExplicitKey
-import com.sonettas.app.innertube.YouTube
-import com.sonettas.app.innertube.models.BrowseEndpoint
-import com.sonettas.app.innertube.models.filterExplicit
-import com.sonettas.app.innertube.pages.ArtistItemsPageLayout
+import moe.rukamori.archivetune.innertube.YouTube
+import moe.rukamori.archivetune.innertube.models.BrowseEndpoint
+import moe.rukamori.archivetune.innertube.models.filterExplicit
+import moe.rukamori.archivetune.innertube.pages.ArtistItemsPageLayout
 import com.sonettas.app.models.ItemsPage
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get

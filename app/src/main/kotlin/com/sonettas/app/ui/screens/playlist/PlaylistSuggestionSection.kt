@@ -48,7 +48,7 @@ import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.extensions.toMediaItem
 import com.sonettas.app.extensions.togglePlayPause
-import com.sonettas.app.innertube.models.SongItem
+import moe.rukamori.archivetune.innertube.models.SongItem
 import com.sonettas.app.playback.queues.ListQueue
 import com.sonettas.app.ui.component.DefaultDialog
 import com.sonettas.app.ui.component.IconButton

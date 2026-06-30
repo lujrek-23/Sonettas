@@ -175,7 +175,7 @@ import me.saket.squiggles.SquigglySlider
 import com.sonettas.app.LocalDownloadUtil
 import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
-import com.sonettas.app.canvas.models.CanvasArtwork
+import moe.rukamori.archivetune.canvas.models.CanvasArtwork
 import com.sonettas.app.constants.SonettasCanvasKey
 import com.sonettas.app.constants.BackdropBlurAmountKey
 import com.sonettas.app.constants.BackdropEnabledKey

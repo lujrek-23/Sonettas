@@ -31,9 +31,9 @@ import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.constants.GridThumbnailHeight
-import com.sonettas.app.innertube.models.AlbumItem
-import com.sonettas.app.innertube.models.ArtistItem
-import com.sonettas.app.innertube.models.PlaylistItem
+import moe.rukamori.archivetune.innertube.models.AlbumItem
+import moe.rukamori.archivetune.innertube.models.ArtistItem
+import moe.rukamori.archivetune.innertube.models.PlaylistItem
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.component.LocalMenuState
 import com.sonettas.app.ui.component.YouTubeGridItem

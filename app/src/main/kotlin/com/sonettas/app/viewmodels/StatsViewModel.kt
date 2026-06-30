@@ -21,7 +21,7 @@ import com.sonettas.app.constants.statToPeriod
 import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.db.entities.ListeningSummary
 import com.sonettas.app.db.entities.ListeningTotals
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.ui.screens.OptionStats
 import com.sonettas.app.utils.reportException
 import java.time.Duration

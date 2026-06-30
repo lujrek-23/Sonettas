@@ -6,7 +6,7 @@
 
 package com.sonettas.app.models
 
-import com.sonettas.app.innertube.models.YTItem
+import moe.rukamori.archivetune.innertube.models.YTItem
 
 data class PlaylistSuggestion(
     val items: List<YTItem>,

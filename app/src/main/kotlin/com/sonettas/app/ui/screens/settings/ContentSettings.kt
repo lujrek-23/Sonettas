@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
 import com.sonettas.app.constants.*
-import com.sonettas.app.innertube.YouTube
+import moe.rukamori.archivetune.innertube.YouTube
 import com.sonettas.app.ui.component.EditTextPreference
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.component.ListPreference
