@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Sonettas</string>
+    <string name="widget_description">Menampilkan lagu yang sedang diputar dengan kontrol pemutaran</string>
+    <string name="widget_album_art_description">Widget sampul album dengan kontrol pemutaran mengambang</string>
+    <string name="widget_now_playing_card_description">Kartu sedang diputar dengan sampul, progres, dan kontrol pemutaran</string>
+    <string name="widget_playback_deck_description">Deck sedang diputar besar dengan sampul, progres, dan kontrol pemutaran</string>
+    <string name="widget_playback_capsule_description">Kapsul pemutaran ekspresif dengan sampul, progres, dan kontrol putar</string>
+    <string name="widget_playback_spotlight_description">Widget spotlight sampul dengan kontrol pemutaran ekspresif</string>
+    <string name="widget_playback_command_description">Widget kontrol-first dengan sampul, progres, dan kontrol skip</string>
+    <string name="widget_listening_insights_description">Widget insight mendengarkan dengan lagu terbaru, genre, dan rekomendasi</string>
 </resources>
