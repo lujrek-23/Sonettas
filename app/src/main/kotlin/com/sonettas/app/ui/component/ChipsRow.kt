@@ -59,6 +59,7 @@ import com.sonettas.app.ui.theme.Orange
 import com.sonettas.app.ui.theme.OrangeLight
 import com.sonettas.app.ui.theme.SonettasFontFamily
 import com.sonettas.app.ui.theme.SonettasRadius
+import com.sonettas.app.ui.theme.SonettasPadding
 import com.sonettas.app.ui.theme.SonettasSpacing
 import com.sonettas.app.ui.theme.SonettasType
 import com.sonettas.app.ui.theme.White

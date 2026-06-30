@@ -7,6 +7,8 @@
 package com.sonettas.app.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -138,7 +140,6 @@ private fun buildTypography(fontFamily: FontFamily) =
             ),
     )
 
-val SonettasFontFamily = FontFamily(Font(R.font.hanken_grotesk_variable))
 val AppTypography = buildTypography(SonettasFontFamily)
 val SystemTypography = buildTypography(FontFamily.Default)
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Indonesian plurals ported from Huasic -->
+<resources>
+    <plurals name="n_element">
+        <item quantity="other">%d elemen</item>
+    </plurals>
+    <plurals name="n_time">
+        <item quantity="other">%d kali</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d detik</item>
+    </plurals>
+</resources>

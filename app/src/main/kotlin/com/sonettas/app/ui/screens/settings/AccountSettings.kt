@@ -108,7 +108,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.sonettas.app.App.Companion.forgetAccount
+import com.sonettas.app.SonettasApp.Companion.forgetAccount
 import com.sonettas.app.BuildConfig
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
