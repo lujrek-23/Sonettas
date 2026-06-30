@@ -12,8 +12,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.extensions.toMediaItem
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.WatchEndpoint
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.WatchEndpoint
 import com.sonettas.app.models.MediaMetadata
 
 class LocalMixQueue(

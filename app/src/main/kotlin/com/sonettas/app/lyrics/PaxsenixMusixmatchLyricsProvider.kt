@@ -8,7 +8,7 @@ package com.sonettas.app.lyrics
 
 import android.content.Context
 import com.sonettas.app.constants.EnablePaxsenixMusixmatchLyricsKey
-import moe.rukamori.archivetune.paxsenix.PaxsenixLyrics
+import com.sonettas.app.paxsenix.PaxsenixLyrics
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 

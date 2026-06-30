@@ -65,7 +65,7 @@ private fun PlaybackDeckContent(context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 GlanceTheme.colors
             } else {
-                HuasicWidgetColors.providers
+                SonettasWidgetColors.providers
             },
     ) {
         val palette = rememberWidgetPalette(state.dominantColor)

@@ -81,10 +81,10 @@ import com.sonettas.app.constants.ThumbnailCornerRadius
 import com.sonettas.app.db.entities.PlaylistEntity
 import com.sonettas.app.db.entities.PlaylistSongMap
 import com.sonettas.app.extensions.toMediaItem
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.PlaylistItem
-import moe.rukamori.archivetune.innertube.models.SongItem
-import moe.rukamori.archivetune.innertube.utils.completed
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.PlaylistItem
+import com.sonettas.app.innertube.models.SongItem
+import com.sonettas.app.innertube.utils.completed
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.ExoDownloadService

@@ -15,8 +15,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.lyrics.LyricsHelper
-import moe.rukamori.archivetune.paxsenix.PaxsenixLyrics
-import moe.rukamori.archivetune.paxsenix.models.PaxsenixStats
+import com.sonettas.app.paxsenix.PaxsenixLyrics
+import com.sonettas.app.paxsenix.models.PaxsenixStats
 import javax.inject.Inject
 
 sealed interface PaxsenixStatsState {

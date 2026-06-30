@@ -30,9 +30,9 @@ import com.sonettas.app.constants.HideExplicitKey
 import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.extensions.filterExplicit
 import com.sonettas.app.extensions.filterExplicitAlbums
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.filterExplicit
-import moe.rukamori.archivetune.innertube.pages.ArtistPage
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.filterExplicit
+import com.sonettas.app.innertube.pages.ArtistPage
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 import com.sonettas.app.utils.reportException

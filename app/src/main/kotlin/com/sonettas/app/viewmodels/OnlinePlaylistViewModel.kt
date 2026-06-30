@@ -25,9 +25,9 @@ import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.sync.withPermit
 import com.sonettas.app.db.MusicDatabase
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.PlaylistItem
-import moe.rukamori.archivetune.innertube.models.SongItem
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.PlaylistItem
+import com.sonettas.app.innertube.models.SongItem
 import com.sonettas.app.utils.reportException
 import javax.inject.Inject
 

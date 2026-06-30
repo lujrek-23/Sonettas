@@ -25,8 +25,8 @@ import com.sonettas.app.R
 import com.sonettas.app.db.entities.Album
 import com.sonettas.app.db.entities.Artist
 import com.sonettas.app.db.entities.Playlist
-import moe.rukamori.archivetune.innertube.models.PlaylistItem
-import moe.rukamori.archivetune.innertube.models.WatchEndpoint
+import com.sonettas.app.innertube.models.PlaylistItem
+import com.sonettas.app.innertube.models.WatchEndpoint
 import com.sonettas.app.ui.menu.AlbumMenu
 import com.sonettas.app.ui.menu.ArtistMenu
 import com.sonettas.app.ui.menu.PlaylistMenu

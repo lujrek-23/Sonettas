@@ -8,7 +8,7 @@ package com.sonettas.app.scrobbling
 
 import kotlinx.coroutines.flow.Flow
 import com.sonettas.app.constants.LastFmProvider
-import moe.rukamori.archivetune.lastfm.models.Authentication
+import com.sonettas.app.lastfm.models.Authentication
 import javax.inject.Inject
 
 class ObserveLastFmSettingsUseCase

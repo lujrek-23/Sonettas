@@ -6,7 +6,7 @@
 
 package com.sonettas.app.utils
 
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 import java.net.InetSocketAddress
 import java.net.Proxy
 

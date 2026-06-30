@@ -9,7 +9,7 @@ package com.sonettas.app.models
 import androidx.compose.runtime.Immutable
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.db.entities.SongEntity
-import moe.rukamori.archivetune.innertube.models.SongItem
+import com.sonettas.app.innertube.models.SongItem
 import com.sonettas.app.ui.utils.resize
 import java.io.Serializable
 import java.time.LocalDateTime

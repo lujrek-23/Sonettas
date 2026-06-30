@@ -1,5 +1,5 @@
 /*
- * Sonettas (2026)
+ * Huasic (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -55,7 +55,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.sonettas.app.ui.theme.HuasicTheme
+import com.sonettas.app.ui.theme.SonettasTheme
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -78,7 +78,7 @@ class DebugActivity : ComponentActivity() {
         val deviceInfo = buildDeviceInfo(this)
 
         setContent {
-            HuasicTheme {
+            SonettasTheme {
                 CrashReportScreen(
                     previewText = previewText,
                     timestampText = timestampText,

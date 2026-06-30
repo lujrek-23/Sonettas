@@ -235,7 +235,7 @@ internal fun skipNextAction(): Action = actionRunCallback<SkipNextAction>()
 
 internal fun skipPreviousAction(): Action = actionRunCallback<SkipPrevAction>()
 
-internal object HuasicWidgetColors {
+internal object SonettasWidgetColors {
     val providers =
         ColorProviders(
             light =

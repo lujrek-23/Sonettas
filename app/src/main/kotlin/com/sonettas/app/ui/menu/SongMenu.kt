@@ -99,7 +99,7 @@ import com.sonettas.app.db.entities.PlaylistSong
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.db.entities.SongArtistMap
 import com.sonettas.app.extensions.toMediaItem
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 import com.sonettas.app.models.toMediaMetadata
 import com.sonettas.app.playback.ExoDownloadService
 import com.sonettas.app.playback.queues.YouTubeQueue

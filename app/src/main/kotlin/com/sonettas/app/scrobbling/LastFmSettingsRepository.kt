@@ -27,8 +27,8 @@ import com.sonettas.app.constants.ScrobbleDelayPercentKey
 import com.sonettas.app.constants.ScrobbleDelaySecondsKey
 import com.sonettas.app.constants.ScrobbleMinSongDurationKey
 import com.sonettas.app.extensions.toEnum
-import moe.rukamori.archivetune.lastfm.LastFM
-import moe.rukamori.archivetune.lastfm.models.Authentication
+import com.sonettas.app.lastfm.LastFM
+import com.sonettas.app.lastfm.models.Authentication
 import com.sonettas.app.utils.dataStore
 import javax.inject.Inject
 import javax.inject.Singleton

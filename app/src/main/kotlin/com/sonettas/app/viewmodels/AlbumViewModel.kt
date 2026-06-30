@@ -18,8 +18,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import com.sonettas.app.db.MusicDatabase
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.AlbumItem
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.AlbumItem
 import com.sonettas.app.utils.reportException
 import javax.inject.Inject
 

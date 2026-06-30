@@ -76,8 +76,8 @@ import com.sonettas.app.constants.ListThumbnailSize
 import com.sonettas.app.constants.SpeedDialSongIdsKey
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.extensions.toMediaItem
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.AlbumItem
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.AlbumItem
 import com.sonettas.app.playback.ExoDownloadService
 import com.sonettas.app.playback.queues.YouTubeAlbumRadio
 import com.sonettas.app.ui.component.ListDialog

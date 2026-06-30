@@ -1,156 +1,466 @@
 /*
- * Sonettas (2026)
+ * Huasic (2026)
  * © Huanime Company
  * GPL-3.0 License
- *
- * Home screen — 4 sections max (NOT 10 like Huasic).
- * Bold sans greeting, shadow cards, clean layout.
  */
 
 package com.sonettas.app.ui.screens
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import kotlinx.coroutines.launch
+import com.sonettas.app.LocalPlayerAwareWindowInsets
+import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
+import com.sonettas.app.constants.DisableBlurKey
+import com.sonettas.app.constants.InnerTubeCookieKey
+import com.sonettas.app.constants.QuickPicksDisplayMode
+import com.sonettas.app.constants.QuickPicksDisplayModeKey
+import com.sonettas.app.constants.ShowHomeCategoryChipsKey
+import moe.rukamori.archivetune.innertube.utils.hasYouTubeLoginCookie
+import com.sonettas.app.ui.component.ChipsRow
+import com.sonettas.app.ui.component.ExpressivePullToRefreshBox
 import com.sonettas.app.ui.component.GreetingBar
-import com.sonettas.app.ui.component.SectionCard
-import com.sonettas.app.ui.theme.CardShadowColor
-import com.sonettas.app.ui.theme.Gray400
-import com.sonettas.app.ui.theme.Gray50
-import com.sonettas.app.ui.theme.NearBlack
-import com.sonettas.app.ui.theme.Orange
-import com.sonettas.app.ui.theme.SonettasPadding
-import com.sonettas.app.ui.theme.SonettasRadius
-import com.sonettas.app.ui.theme.SonettasType
-import com.sonettas.app.ui.theme.White
+import com.sonettas.app.ui.component.LocalBottomSheetPageState
+import com.sonettas.app.ui.component.LocalMenuState
+import com.sonettas.app.ui.component.NavigationTitle
+import com.sonettas.app.ui.theme.Ink
+import com.sonettas.app.ui.theme.Paper
+import com.sonettas.app.ui.theme.Stone
+import com.sonettas.app.ui.theme.Terracotta
+import com.sonettas.app.ui.theme.Vellum
+import com.sonettas.app.ui.utils.SnapLayoutInfoProvider
+import com.sonettas.app.utils.rememberEnumPreference
+import com.sonettas.app.utils.rememberPreference
+import com.sonettas.app.viewmodels.HomeViewModel
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
-    onNavigate: (String) -> Unit,
+    navController: NavController,
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 80.dp),
-    ) {
-        // Greeting — bold sans, NOT serif
-        item { GreetingBar() }
+    val menuState = LocalMenuState.current
+    val bottomSheetPageState = LocalBottomSheetPageState.current
+    val playerConnection = LocalPlayerConnection.current ?: return
+    val haptic = LocalHapticFeedback.current
 
-        // Section 1: Recently Played — horizontal scroll cards
-        item {
-            SectionCard(title = "Baru diputar") {
-                // Placeholder — will be replaced with real data
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    repeat(3) { index ->
-                        PlaceholderTrackRow(index = index)
-                    }
-                }
-            }
+    val isPlaying by playerConnection.isPlaying.collectAsStateWithLifecycle()
+    val mediaMetadata by playerConnection.mediaMetadata.collectAsStateWithLifecycle()
+
+    val quickPicks by viewModel.quickPicks.collectAsStateWithLifecycle()
+    val speedDialItems by viewModel.speedDialItems.collectAsStateWithLifecycle()
+    val forgottenFavorites by viewModel.forgottenFavorites.collectAsStateWithLifecycle()
+    val keepListening by viewModel.keepListening.collectAsStateWithLifecycle()
+    val homePage by viewModel.homePage.collectAsStateWithLifecycle()
+
+    val selectedChip by viewModel.selectedChip.collectAsStateWithLifecycle()
+
+    val isLoading: Boolean by viewModel.isLoading.collectAsStateWithLifecycle()
+    val isRefreshing by viewModel.isRefreshing.collectAsStateWithLifecycle()
+
+    val forgottenFavoritesLazyGridState = rememberLazyGridState()
+
+    val accountName by viewModel.accountName.collectAsStateWithLifecycle()
+    val accountImageUrl by viewModel.accountImageUrl.collectAsStateWithLifecycle()
+    val innerTubeCookie by rememberPreference(InnerTubeCookieKey, "")
+    val (disableBlur) = rememberPreference(DisableBlurKey, false)
+    val (showHomeCategoryChips) = rememberPreference(ShowHomeCategoryChipsKey, true)
+    val (quickPicksDisplayMode) = rememberEnumPreference(QuickPicksDisplayModeKey, QuickPicksDisplayMode.CARD)
+    val isLoggedIn =
+        remember(innerTubeCookie) {
+            hasYouTubeLoginCookie(innerTubeCookie)
         }
+    val url = if (isLoggedIn) accountImageUrl else null
 
-        item { Spacer(modifier = Modifier.height(20.dp)) }
+    val scope = rememberCoroutineScope()
+    val lazylistState = rememberLazyListState()
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val scrollToTop =
+        backStackEntry?.savedStateHandle?.getStateFlow("scrollToTop", false)?.collectAsStateWithLifecycle()
 
-        // Section 2: Quick Picks
-        item {
-            SectionCard(title = "Pilihan cepat") {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    repeat(2) { index ->
-                        PlaceholderTrackRow(index = index + 10)
-                    }
-                }
-            }
+    LaunchedEffect(scrollToTop?.value) {
+        if (scrollToTop?.value == true) {
+            lazylistState.animateScrollToItem(0)
+            backStackEntry?.savedStateHandle?.set("scrollToTop", false)
         }
+    }
 
-        item { Spacer(modifier = Modifier.height(20.dp)) }
-
-        // Section 3: For You (YouTube sections)
-        item {
-            SectionCard(title = "Untuk kamu") {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    repeat(3) { index ->
-                        PlaceholderTrackRow(index = index + 20)
-                    }
-                }
-            }
-        }
-
-        item { Spacer(modifier = Modifier.height(20.dp)) }
-
-        // Section 4: New Releases
-        item {
-            SectionCard(title = "Rilis baru") {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    repeat(2) { index ->
-                        PlaceholderTrackRow(index = index + 30)
-                    }
-                }
+    LaunchedEffect(Unit) {
+        snapshotFlow {
+            lazylistState.layoutInfo.visibleItemsInfo
+                .lastOrNull()
+                ?.index
+        }.collect { lastVisibleIndex ->
+            val len = lazylistState.layoutInfo.totalItemsCount
+            if (lastVisibleIndex != null && lastVisibleIndex >= len - 3) {
+                viewModel.loadMoreYouTubeItems(homePage?.continuation)
             }
         }
     }
-}
 
-@Composable
-private fun PlaceholderTrackRow(index: Int) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .shadow(1.dp, RoundedCornerShape(SonettasRadius.sm), spotColor = CardShadowColor),
-        shape = RoundedCornerShape(SonettasRadius.sm),
-        color = Gray50,
+    if (selectedChip != null) {
+        BackHandler {
+            // if a chip is selected, go back to the normal homepage first
+            viewModel.toggleChip(selectedChip)
+        }
+    }
+
+    LaunchedEffect(showHomeCategoryChips, selectedChip) {
+        if (!showHomeCategoryChips && selectedChip != null) {
+            viewModel.toggleChip(selectedChip)
+        }
+    }
+
+    LaunchedEffect(forgottenFavorites) {
+        forgottenFavoritesLazyGridState.scrollToItem(0)
+    }
+
+    // Capture M3 Expressive colors from theme outside drawBehind
+    // Huasic: editorial palette — paper, ink, terracotta
+    val color1 = Terracotta
+    val color2 = Ink
+    val color3 = Stone
+    val color4 = MaterialTheme.colorScheme.primaryContainer
+    val color5 = MaterialTheme.colorScheme.secondaryContainer
+    val surfaceColor = MaterialTheme.colorScheme.surface
+
+    Box(
+        modifier = Modifier.fillMaxSize(),
     ) {
-        androidx.compose.foundation.layout.Row(
-            modifier = Modifier.padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        // M3E Mesh gradient background layer at the top
+        if (!disableBlur) {
+            Box(
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .fillMaxSize(0.7f) // Cover top 70% of screen
+                        .align(Alignment.TopCenter)
+                        .zIndex(-1f) // Place behind all content
+                        .drawWithCache {
+                            val width = this.size.width
+                            val height = this.size.height
+
+                            // Create mesh gradient with 5 color blobs for more variation
+                            // First color blob - top left
+                            val brush1 =
+                                Brush.radialGradient(
+                                    colors =
+                                        listOf(
+                                            color1.copy(alpha = 0.38f),
+                                            color1.copy(alpha = 0.24f),
+                                            color1.copy(alpha = 0.14f),
+                                            color1.copy(alpha = 0.06f),
+                                            Color.Transparent,
+                                        ),
+                                    center = Offset(width * 0.15f, height * 0.1f),
+                                    radius = width * 0.55f,
+                                )
+
+                            // Second color blob - top right
+                            val brush2 =
+                                Brush.radialGradient(
+                                    colors =
+                                        listOf(
+                                            color2.copy(alpha = 0.34f),
+                                            color2.copy(alpha = 0.2f),
+                                            color2.copy(alpha = 0.11f),
+                                            color2.copy(alpha = 0.05f),
+                                            Color.Transparent,
+                                        ),
+                                    center = Offset(width * 0.85f, height * 0.2f),
+                                    radius = width * 0.65f,
+                                )
+
+                            // Third color blob - middle left
+                            val brush3 =
+                                Brush.radialGradient(
+                                    colors =
+                                        listOf(
+                                            color3.copy(alpha = 0.3f),
+                                            color3.copy(alpha = 0.17f),
+                                            color3.copy(alpha = 0.09f),
+                                            color3.copy(alpha = 0.04f),
+                                            Color.Transparent,
+                                        ),
+                                    center = Offset(width * 0.3f, height * 0.45f),
+                                    radius = width * 0.6f,
+                                )
+
+                            // Fourth color blob - middle right
+                            val brush4 =
+                                Brush.radialGradient(
+                                    colors =
+                                        listOf(
+                                            color4.copy(alpha = 0.26f),
+                                            color4.copy(alpha = 0.14f),
+                                            color4.copy(alpha = 0.08f),
+                                            color4.copy(alpha = 0.03f),
+                                            Color.Transparent,
+                                        ),
+                                    center = Offset(width * 0.7f, height * 0.5f),
+                                    radius = width * 0.7f,
+                                )
+
+                            // Fifth color blob - bottom center (helps with smooth fade)
+                            val brush5 =
+                                Brush.radialGradient(
+                                    colors =
+                                        listOf(
+                                            color5.copy(alpha = 0.22f),
+                                            color5.copy(alpha = 0.12f),
+                                            color5.copy(alpha = 0.06f),
+                                            color5.copy(alpha = 0.02f),
+                                            Color.Transparent,
+                                        ),
+                                    center = Offset(width * 0.5f, height * 0.75f),
+                                    radius = width * 0.8f,
+                                )
+
+                            // Add a final vertical gradient overlay to ensure smooth bottom fade
+                            val overlayBrush =
+                                Brush.verticalGradient(
+                                    colors =
+                                        listOf(
+                                            Color.Transparent,
+                                            Color.Transparent,
+                                            surfaceColor.copy(alpha = 0.22f),
+                                            surfaceColor.copy(alpha = 0.55f),
+                                            surfaceColor,
+                                        ),
+                                    startY = height * 0.4f,
+                                    endY = height,
+                                )
+
+                            onDrawBehind {
+                                drawRect(brush = brush1)
+                                drawRect(brush = brush2)
+                                drawRect(brush = brush3)
+                                drawRect(brush = brush4)
+                                drawRect(brush = brush5)
+                                drawRect(brush = overlayBrush)
+                            }
+                        },
+            ) {}
+        }
+
+        ExpressivePullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = viewModel::refresh,
+            modifier = Modifier.fillMaxSize(),
         ) {
-            // Album art placeholder
-            Surface(
-                shape = RoundedCornerShape(SonettasRadius.sm),
-                color = if (index % 3 == 0) Orange.copy(alpha = 0.2f) else Gray50,
-                modifier = Modifier.size(48.dp),
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_play),
-                        contentDescription = null,
-                        tint = if (index % 3 == 0) Orange else Gray400,
-                        modifier = Modifier.size(20.dp),
+            BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+                val horizontalLazyGridItemWidthFactor = if (maxWidth * 0.475f >= 320.dp) 0.475f else 0.9f
+                val horizontalLazyGridItemWidth = maxWidth * horizontalLazyGridItemWidthFactor
+                val forgottenFavoritesSnapLayoutInfoProvider =
+                    remember(forgottenFavoritesLazyGridState) {
+                        SnapLayoutInfoProvider(
+                            lazyGridState = forgottenFavoritesLazyGridState,
+                            positionInLayout = { layoutSize, itemSize ->
+                                (layoutSize * horizontalLazyGridItemWidthFactor / 2f - itemSize / 2f)
+                            },
+                        )
+                    }
+
+                LazyColumn(
+                    state = lazylistState,
+                    contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+                ) {
+                    // Huasic signature greeting header
+                    item(key = "huasic_greeting") {
+                        GreetingBar(accountName = accountName)
+                    }
+
+                    if (showHomeCategoryChips) {
+                        item {
+                            ChipsRow(
+                                chips = homePage?.chips.orEmpty().map { it to it.title },
+                                currentValue = selectedChip,
+                                onValueUpdate = {
+                                    viewModel.toggleChip(it)
+                                },
+                            )
+                        }
+                    }
+
+                    quickPicks?.takeIf { it.isNotEmpty() }?.let { picks ->
+                /*
+                    item {
+                        NavigationTitle(
+                            title = stringResource(R.string.quick_picks),
+                            modifier = Modifier.animateItem()
+                        )
+                    }
+                 */
+
+                        item(
+                            key = "home_quick_picks",
+                            contentType = "quick_picks",
+                        ) {
+                            QuickPicksSection(
+                                quickPicks = picks,
+                                mediaMetadata = mediaMetadata,
+                                isPlaying = isPlaying,
+                                displayMode = quickPicksDisplayMode,
+                                navController = navController,
+                                playerConnection = playerConnection,
+                                menuState = menuState,
+                                haptic = haptic,
+                            )
+                        }
+                    }
+
+                    speedDialItems.takeIf { it.isNotEmpty() }?.let { items ->
+                        item {
+                            NavigationTitle(
+                                title = stringResource(R.string.speed_dial),
+                                modifier = Modifier.animateItem(),
+                            )
+                        }
+
+                        item {
+                            SpeedDialSection(
+                                speedDialItems = items,
+                                mediaMetadata = mediaMetadata,
+                                isPlaying = isPlaying,
+                                navController = navController,
+                                playerConnection = playerConnection,
+                                menuState = menuState,
+                                haptic = haptic,
+                                scope = scope,
+                            )
+                        }
+                    }
+
+                    keepListening?.takeIf { it.isNotEmpty() }?.let { items ->
+                        item {
+                            NavigationTitle(
+                                title = stringResource(R.string.keep_listening),
+                                modifier = Modifier.animateItem(),
+                            )
+                        }
+
+                        item {
+                            KeepListeningSection(
+                                keepListening = items,
+                                mediaMetadata = mediaMetadata,
+                                isPlaying = isPlaying,
+                                navController = navController,
+                                playerConnection = playerConnection,
+                                menuState = menuState,
+                                haptic = haptic,
+                                scope = scope,
+                            )
+                        }
+                    }
+
+                    AccountPlaylistsContainer(
+                        viewModel = viewModel,
+                        accountName = accountName,
+                        accountImageUrl = url,
+                        mediaMetadata = mediaMetadata,
+                        isPlaying = isPlaying,
+                        navController = navController,
+                        playerConnection = playerConnection,
+                        menuState = menuState,
+                        haptic = haptic,
+                        scope = scope,
                     )
+
+                    forgottenFavorites?.takeIf { it.isNotEmpty() }?.let { favorites ->
+                        item {
+                            NavigationTitle(
+                                title = stringResource(R.string.forgotten_favorites),
+                                modifier = Modifier.animateItem(),
+                            )
+                        }
+
+                        item {
+                            ForgottenFavoritesSection(
+                                forgottenFavorites = favorites,
+                                mediaMetadata = mediaMetadata,
+                                isPlaying = isPlaying,
+                                horizontalLazyGridItemWidth = horizontalLazyGridItemWidth,
+                                lazyGridState = forgottenFavoritesLazyGridState,
+                                snapLayoutInfoProvider = forgottenFavoritesSnapLayoutInfoProvider,
+                                navController = navController,
+                                playerConnection = playerConnection,
+                                menuState = menuState,
+                                haptic = haptic,
+                            )
+                        }
+                    }
+
+                    SimilarRecommendationsContainer(
+                        viewModel = viewModel,
+                        mediaMetadata = mediaMetadata,
+                        isPlaying = isPlaying,
+                        navController = navController,
+                        playerConnection = playerConnection,
+                        menuState = menuState,
+                        haptic = haptic,
+                        scope = scope,
+                    )
+
+                    homePage?.sections?.forEach { section ->
+                        item {
+                            HomePageSectionTitle(
+                                section = section,
+                                navController = navController,
+                                modifier = Modifier.animateItem(),
+                            )
+                        }
+
+                        item {
+                            HomePageSectionContent(
+                                section = section,
+                                mediaMetadata = mediaMetadata,
+                                isPlaying = isPlaying,
+                                navController = navController,
+                                playerConnection = playerConnection,
+                                menuState = menuState,
+                                haptic = haptic,
+                                scope = scope,
+                            )
+                        }
+                    }
+
+                    if (isLoading || homePage?.continuation != null && homePage?.sections?.isNotEmpty() == true) {
+                        item {
+                            HomeLoadingShimmer(modifier = Modifier.animateItem())
+                        }
+                    }
                 }
             }
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = "Lagu ${index + 1}",
-                    style = SonettasType.bodyBold,
-                    color = NearBlack,
-                )
-                Text(
-                    text = "Artis ${index + 1}",
-                    style = SonettasType.caption,
-                    color = Gray400,
-                )
-            }
-            Text(
-                text = "3:2${index % 10}",
-                style = SonettasType.mono,
-                color = Gray400,
-            )
         }
     }
 }

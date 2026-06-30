@@ -25,7 +25,7 @@ import com.sonettas.app.db.entities.Artist
 import com.sonettas.app.db.entities.ListeningTotals
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.db.entities.SongWithStats
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 import com.sonettas.app.utils.reportException
 import java.time.Duration
 import java.time.LocalDateTime

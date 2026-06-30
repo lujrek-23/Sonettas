@@ -6,7 +6,7 @@
 
 package com.sonettas.app.models
 
-import moe.rukamori.archivetune.innertube.models.YTItem
+import com.sonettas.app.innertube.models.YTItem
 
 data class ItemsPage(
     val items: List<YTItem>,

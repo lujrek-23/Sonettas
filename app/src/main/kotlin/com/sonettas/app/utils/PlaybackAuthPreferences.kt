@@ -22,8 +22,8 @@ import com.sonettas.app.constants.PoTokenPlayerKey
 import com.sonettas.app.constants.PoTokenSourceUrlKey
 import com.sonettas.app.constants.VisitorDataKey
 import com.sonettas.app.constants.WebClientPoTokenEnabledKey
-import moe.rukamori.archivetune.innertube.PlaybackAuthState
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.PlaybackAuthState
+import com.sonettas.app.innertube.YouTube
 
 fun Preferences.toPlaybackAuthState(): PlaybackAuthState =
     PlaybackAuthState(

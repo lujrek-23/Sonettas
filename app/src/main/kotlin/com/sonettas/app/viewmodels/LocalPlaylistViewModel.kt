@@ -42,12 +42,12 @@ import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.db.entities.PlaylistSong
 import com.sonettas.app.extensions.reversed
 import com.sonettas.app.extensions.toEnum
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.SongItem
-import moe.rukamori.archivetune.innertube.models.YTItem
-import moe.rukamori.archivetune.innertube.models.filterExplicit
-import moe.rukamori.archivetune.innertube.models.filterVideo
-import moe.rukamori.archivetune.innertube.pages.SearchResult
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.SongItem
+import com.sonettas.app.innertube.models.YTItem
+import com.sonettas.app.innertube.models.filterExplicit
+import com.sonettas.app.innertube.models.filterVideo
+import com.sonettas.app.innertube.pages.SearchResult
 import com.sonettas.app.models.PlaylistSuggestion
 import com.sonettas.app.models.PlaylistSuggestionPage
 import com.sonettas.app.models.PlaylistSuggestionQuery
@@ -409,7 +409,7 @@ class LocalPlaylistViewModel
         }
 
         suspend fun addSongToPlaylist(
-            song: moe.rukamori.archivetune.innertube.models.SongItem,
+            song: com.sonettas.app.innertube.models.SongItem,
             browseId: String?,
         ): Boolean {
             return try {

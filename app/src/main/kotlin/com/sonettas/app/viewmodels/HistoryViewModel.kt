@@ -21,8 +21,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.sonettas.app.constants.HistorySource
 import com.sonettas.app.db.MusicDatabase
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.pages.HistoryPage
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.pages.HistoryPage
 import com.sonettas.app.utils.reportException
 import timber.log.Timber
 import java.time.DayOfWeek

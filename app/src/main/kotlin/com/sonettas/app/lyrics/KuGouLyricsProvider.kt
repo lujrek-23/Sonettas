@@ -8,7 +8,7 @@ package com.sonettas.app.lyrics
 
 import android.content.Context
 import com.sonettas.app.constants.EnableKugouKey
-import moe.rukamori.archivetune.kugou.KuGou
+import com.sonettas.app.kugou.KuGou
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 

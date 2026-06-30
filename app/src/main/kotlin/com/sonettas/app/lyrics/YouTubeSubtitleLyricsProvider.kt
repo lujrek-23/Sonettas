@@ -7,7 +7,7 @@
 package com.sonettas.app.lyrics
 
 import android.content.Context
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 
 object YouTubeSubtitleLyricsProvider : LyricsProvider {
     override val name = "YouTube Subtitle"

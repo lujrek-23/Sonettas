@@ -14,11 +14,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import com.sonettas.app.db.MusicDatabase
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.AlbumItem
-import moe.rukamori.archivetune.innertube.models.PlaylistItem
-import moe.rukamori.archivetune.innertube.models.YTItem
-import moe.rukamori.archivetune.innertube.utils.completed
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.AlbumItem
+import com.sonettas.app.innertube.models.PlaylistItem
+import com.sonettas.app.innertube.models.YTItem
+import com.sonettas.app.innertube.utils.completed
 import com.sonettas.app.utils.reportException
 import javax.inject.Inject
 

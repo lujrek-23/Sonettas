@@ -51,7 +51,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import com.sonettas.app.ui.component.DefaultDialog
 import com.sonettas.app.ui.menu.LoadingScreen
-import com.sonettas.app.ui.theme.HuasicTheme
+import com.sonettas.app.ui.theme.SonettasTheme
 import com.sonettas.app.viewmodels.BackupCategory
 import com.sonettas.app.viewmodels.BackupRestoreViewModel
 
@@ -66,7 +66,7 @@ class RestoreBackupFileActivity : ComponentActivity() {
             return
         }
         setContent {
-            HuasicTheme {
+            SonettasTheme {
                 RestoreBackupFileScreen(
                     uri = uri,
                     onNavigateBack = { finish() },

@@ -24,7 +24,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import com.sonettas.app.R
 import com.sonettas.app.constants.LastFmProvider
-import moe.rukamori.archivetune.lastfm.LastFM
+import com.sonettas.app.lastfm.LastFM
 import com.sonettas.app.scrobbling.LastFmServiceConfig
 import com.sonettas.app.scrobbling.LastFmSettingsData
 import com.sonettas.app.scrobbling.LoginLastFmUseCase

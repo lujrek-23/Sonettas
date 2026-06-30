@@ -6,7 +6,7 @@
 
 package com.sonettas.app.extensions
 
-import moe.rukamori.archivetune.innertube.models.WatchEndpoint
+import com.sonettas.app.innertube.models.WatchEndpoint
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.models.PersistQueue
 import com.sonettas.app.models.QueueData

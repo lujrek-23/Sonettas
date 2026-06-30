@@ -36,7 +36,7 @@ import com.sonettas.app.R
 import com.sonettas.app.constants.InnerTubeCookieKey
 import com.sonettas.app.db.entities.PlaylistEntity
 import com.sonettas.app.extensions.isSyncEnabled
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 import com.sonettas.app.utils.rememberPreference
 import java.time.LocalDateTime
 import java.util.logging.Logger

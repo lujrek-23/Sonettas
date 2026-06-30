@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import moe.rukamori.archivetune.lastfm.LastFM
+import com.sonettas.app.lastfm.LastFM
 import com.sonettas.app.models.MediaMetadata
 import timber.log.Timber
 import kotlin.math.min

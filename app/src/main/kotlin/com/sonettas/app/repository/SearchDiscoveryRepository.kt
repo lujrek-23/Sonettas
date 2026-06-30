@@ -12,13 +12,13 @@ import kotlinx.coroutines.withContext
 import com.sonettas.app.db.MusicDatabase
 import com.sonettas.app.db.entities.Artist
 import com.sonettas.app.db.entities.Song
-import moe.rukamori.archivetune.innertube.YouTube
-import moe.rukamori.archivetune.innertube.models.AlbumItem
-import moe.rukamori.archivetune.innertube.models.ArtistItem
-import moe.rukamori.archivetune.innertube.models.SongItem
-import moe.rukamori.archivetune.innertube.models.WatchEndpoint
-import moe.rukamori.archivetune.innertube.pages.ChartsPage
-import moe.rukamori.archivetune.innertube.pages.MoodAndGenres
+import com.sonettas.app.innertube.YouTube
+import com.sonettas.app.innertube.models.AlbumItem
+import com.sonettas.app.innertube.models.ArtistItem
+import com.sonettas.app.innertube.models.SongItem
+import com.sonettas.app.innertube.models.WatchEndpoint
+import com.sonettas.app.innertube.pages.ChartsPage
+import com.sonettas.app.innertube.pages.MoodAndGenres
 import javax.inject.Inject
 import javax.inject.Singleton
 

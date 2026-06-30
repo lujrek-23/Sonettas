@@ -57,7 +57,7 @@ import com.sonettas.app.LocalPlayerConnection
 import com.sonettas.app.R
 import com.sonettas.app.constants.SpeedDialSongIdsKey
 import com.sonettas.app.db.entities.ArtistEntity
-import moe.rukamori.archivetune.innertube.models.ArtistItem
+import com.sonettas.app.innertube.models.ArtistItem
 import com.sonettas.app.playback.queues.YouTubeQueue
 import com.sonettas.app.ui.component.MenuSurfaceSection
 import com.sonettas.app.ui.component.NewAction

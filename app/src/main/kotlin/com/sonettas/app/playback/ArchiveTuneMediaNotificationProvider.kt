@@ -20,7 +20,7 @@ import com.google.common.collect.ImmutableList
 import com.sonettas.app.R
 
 @UnstableApi
-class HuasicMediaNotificationProvider(
+class SonettasMediaNotificationProvider(
     private val context: Context,
     @DrawableRes smallIconResId: Int,
 ) : MediaNotification.Provider {

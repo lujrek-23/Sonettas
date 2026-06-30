@@ -42,8 +42,8 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import com.sonettas.app.R
-import moe.rukamori.archivetune.innertube.models.SongItem
-import moe.rukamori.archivetune.innertube.models.YTItem
+import com.sonettas.app.innertube.models.SongItem
+import com.sonettas.app.innertube.models.YTItem
 import com.sonettas.app.ui.utils.resize
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)

@@ -37,7 +37,7 @@ import com.sonettas.app.db.entities.FormatEntity
 import com.sonettas.app.db.entities.SongEntity
 import com.sonettas.app.di.DownloadCache
 import com.sonettas.app.di.PlayerCache
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 import com.sonettas.app.utils.AuthScopedCacheValue
 import com.sonettas.app.utils.StreamClientUtils
 import com.sonettas.app.utils.YTPlayerUtils

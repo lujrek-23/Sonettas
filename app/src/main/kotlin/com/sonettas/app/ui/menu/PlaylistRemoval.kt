@@ -7,7 +7,7 @@
 package com.sonettas.app.ui.menu
 
 import com.sonettas.app.db.entities.PlaylistSongMap
-import moe.rukamori.archivetune.innertube.YouTube
+import com.sonettas.app.innertube.YouTube
 
 suspend fun removeSongFromRemotePlaylist(
     playlistBrowseId: String,

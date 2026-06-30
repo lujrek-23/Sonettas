@@ -11,7 +11,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.sonettas.app.constants.InnerTubeCookieKey
 import com.sonettas.app.constants.YtmSyncKey
-import moe.rukamori.archivetune.innertube.utils.hasYouTubeLoginCookie
+import com.sonettas.app.innertube.utils.hasYouTubeLoginCookie
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 
