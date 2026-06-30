@@ -53,11 +53,11 @@ import com.sonettas.app.ui.component.GreetingBar
 import com.sonettas.app.ui.component.LocalBottomSheetPageState
 import com.sonettas.app.ui.component.LocalMenuState
 import com.sonettas.app.ui.component.NavigationTitle
-import com.sonettas.app.ui.theme.Ink
-import com.sonettas.app.ui.theme.Paper
-import com.sonettas.app.ui.theme.Stone
-import com.sonettas.app.ui.theme.Terracotta
-import com.sonettas.app.ui.theme.Vellum
+import com.sonettas.app.ui.theme.Gray400
+import com.sonettas.app.ui.theme.Gray600
+import com.sonettas.app.ui.theme.NearBlack
+import com.sonettas.app.ui.theme.Orange
+import com.sonettas.app.ui.theme.White
 import com.sonettas.app.ui.utils.SnapLayoutInfoProvider
 import com.sonettas.app.utils.rememberEnumPreference
 import com.sonettas.app.utils.rememberPreference
@@ -147,9 +147,9 @@ fun HomeScreen(
 
     // Capture M3 Expressive colors from theme outside drawBehind
     // Sonettas: editorial palette — paper, ink, terracotta
-    val color1 = Terracotta
-    val color2 = Ink
-    val color3 = Stone
+    val color1 = Orange
+    val color2 = NearBlack
+    val color3 = Gray600
     val color4 = MaterialTheme.colorScheme.primaryContainer
     val color5 = MaterialTheme.colorScheme.secondaryContainer
     val surfaceColor = MaterialTheme.colorScheme.surface

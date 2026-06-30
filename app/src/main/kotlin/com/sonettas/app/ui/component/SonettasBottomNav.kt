@@ -3,8 +3,10 @@
  * © Huanime Company
  * GPL-3.0 License
  *
- * Bottom navigation — standard NavigationBar (NOT floating toolbar like Sonettas).
- * Clean, white, orange accent for active tab.
+ * Bottom navigation — standard NavigationBar.
+ * Per layout.md: predictable, consistent, familiar navigation.
+ * Per interaction-design.md: 8 states for each tab.
+ * Per colorize.md: Orange for selected state ONLY (Restrained).
  */
 
 package com.sonettas.app.ui.component
@@ -19,13 +21,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.sonettas.app.ui.Screen
 import com.sonettas.app.ui.theme.Gray400
 import com.sonettas.app.ui.theme.NearBlack
 import com.sonettas.app.ui.theme.Orange
-import com.sonettas.app.ui.theme.White
+import com.sonettas.app.ui.theme.SonettasFontFamily
 import com.sonettas.app.ui.theme.SonettasType
+import com.sonettas.app.ui.theme.White
 
 @Composable
 fun SonettasBottomNav(
@@ -51,7 +55,9 @@ fun SonettasBottomNav(
                 label = {
                     Text(
                         text = stringResource(screen.titleRes),
-                        style = SonettasType.caption,
+                        style = SonettasType.label,
+                        fontFamily = SonettasFontFamily,
+                        fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(

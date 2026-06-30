@@ -43,7 +43,7 @@ fun MarkdownText(
 
     val typeface =
         remember(context) {
-            ResourcesCompat.getFont(context, R.font.plus_jakarta_sans_variable)
+            ResourcesCompat.getFont(context, R.font.hanken_grotesk_variable)
         }
 
     val markwon =

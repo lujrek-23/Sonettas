@@ -54,3 +54,16 @@ val ElevatedShadowColor = Color(0x14000000) // 8% black
 
 // ── Hairline ──────────────────────────────────────────────────────────────
 val HairlineColor = Gray200
+
+// ── Aliases (backward compat for copied components) ────────────────
+val Paper = White
+val PaperRaised = White
+val Vellum = Gray100
+val VellumDeep = Gray200
+val Ink = NearBlack
+val InkSoft = Gray800
+val Stone = Gray600
+val StoneLight = Gray400
+val Terracotta = Orange
+val TerracottaDeep = OrangeDeep
+val TerracottaSoft = OrangeLight

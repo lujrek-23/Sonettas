@@ -138,7 +138,7 @@ private fun buildTypography(fontFamily: FontFamily) =
             ),
     )
 
-val SonettasFontFamily = FontFamily(Font(R.font.plus_jakarta_sans_variable))
+val SonettasFontFamily = FontFamily(Font(R.font.hanken_grotesk_variable))
 val AppTypography = buildTypography(SonettasFontFamily)
 val SystemTypography = buildTypography(FontFamily.Default)
 
