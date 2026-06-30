@@ -197,7 +197,9 @@ dependencies {
 
     implementation(libs.hilt)
     implementation(libs.re2j)
+    annotationProcessor(libs.kotlin.metadata.jvm)
     ksp(libs.hilt.compiler)
+    ksp(libs.kotlin.metadata.jvm)
 
     implementation(project(":core"))
     implementation(project(":lyrics:kugou"))
@@ -240,6 +242,18 @@ dependencies {
     implementation(libs.accompanist.lyrics.core)
 
     implementation("org.json:json:20240303")
+}
+
+configurations.configureEach {
+    resolutionStrategy.force(
+        "androidx.compose.runtime:runtime:${libs.versions.compose.get()}",
+        "androidx.compose.foundation:foundation:${libs.versions.compose.get()}",
+        "androidx.compose.ui:ui:${libs.versions.compose.get()}",
+        "androidx.compose.ui:ui-util:${libs.versions.compose.get()}",
+        "androidx.compose.ui:ui-tooling:${libs.versions.compose.get()}",
+        "androidx.compose.animation:animation-graphics:${libs.versions.compose.get()}",
+        "org.jetbrains.kotlin:kotlin-metadata-jvm:${libs.versions.kotlinMetadata.get()}",
+    )
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
