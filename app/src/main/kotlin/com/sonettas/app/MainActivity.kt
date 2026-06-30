@@ -264,9 +264,6 @@ import com.sonettas.app.ui.screens.search.OnlineSearchResultRoutePrefix
 import com.sonettas.app.ui.screens.search.OnlineSearchScreen
 import com.sonettas.app.ui.screens.search.decodeOnlineSearchQuery
 import com.sonettas.app.ui.screens.search.onlineSearchResultRoute
-import com.sonettas.app.onboarding.OnboardingScreenState
-import com.sonettas.app.onboarding.OnboardingViewModel
-import com.sonettas.app.ui.screens.onboarding.OnboardingRoute
 import com.sonettas.app.ui.screens.settings.DarkMode
 import com.sonettas.app.ui.screens.settings.NavigationTab
 import com.sonettas.app.ui.theme.SonettasTheme
@@ -781,20 +778,8 @@ class MainActivity : ComponentActivity() {
                 fontPreference = fontPreference,
                 customFontUri = customFontUri,
             ) {
-                val onboardingViewModel: OnboardingViewModel = hiltViewModel()
-                val onboardingState by onboardingViewModel.screenState.collectAsStateWithLifecycle()
-                val shouldShowOnboarding =
-                    when (val state = onboardingState) {
-                        OnboardingScreenState.Loading -> true
-                        OnboardingScreenState.Empty -> true
-                        is OnboardingScreenState.Error -> false
-                        is OnboardingScreenState.Success -> state.uiState.shouldShowOnboarding
-                    }
-
-                if (shouldShowOnboarding) {
-                    OnboardingRoute(viewModel = onboardingViewModel)
-                    return@SonettasTheme
-                }
+                // Sonettas: No onboarding — skip straight to app
+                // Permissions requested natively when needed (storage, notifications)
 
                 BoxWithConstraints(
                     modifier =

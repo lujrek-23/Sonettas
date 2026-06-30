@@ -29,8 +29,8 @@ class OnboardingRepository
     ) {
         fun observeShouldShowOnboarding(): Flow<Boolean> =
             context.dataStore.data.map { preferences ->
-                preferences[OnboardingCompletedKey] != true &&
-                    (preferences[LaunchCountKey] ?: 0) <= 0
+                // Sonettas: No onboarding — always return false
+                false
             }
 
         fun currentPermissions(): ImmutableList<OnboardingPermissionData> =
