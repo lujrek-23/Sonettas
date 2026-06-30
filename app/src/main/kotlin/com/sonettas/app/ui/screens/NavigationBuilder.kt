@@ -317,59 +317,20 @@ fun NavGraphBuilder.navigationBuilder(
     composable("settings/account") {
         AccountSettings(navController, scrollBehavior, latestVersionName())
     }
-    composable("settings/hidden_playlists") {
-        HiddenPlaylistsScreen(navController, scrollBehavior)
-    }
     composable("settings/appearance") {
         AppearanceSettings(navController, scrollBehavior)
-    }
-    composable("settings/appearance/aod_customized") {
-        AodCustomizedScreen(navController, scrollBehavior)
-    }
-    composable("settings/appearance/palette_picker") {
-        PalettePickerScreen(navController)
-    }
-    composable("settings/appearance/lyrics_animations") {
-        LyricsAnimationSettings(navController, scrollBehavior)
-    }
-    composable("settings/appearance/theme_creator") {
-        ThemeCreatorScreen(navController)
-    }
-    composable("settings/content") {
-        ContentSettings(navController)
-    }
-    composable("settings/lyrics") {
-        LyricsSettings(navController)
-    }
-    composable("settings/internet") {
-        InternetSettings(navController, scrollBehavior)
     }
     composable("settings/player") {
         PlayerSettings(navController, scrollBehavior)
     }
+    composable("settings/lyrics") {
+        LyricsSettings(navController)
+    }
     composable("settings/storage") {
         StorageSettings(navController, scrollBehavior)
     }
-    composable("settings/privacy") {
-        PrivacySettings(navController, scrollBehavior)
-    }
-    composable("settings/backup_restore") {
-        BackupAndRestore(navController, scrollBehavior)
-    }
-    composable("settings/integration") {
-        IntegrationScreen(navController, scrollBehavior)
-    }
-    composable("settings/lastfm") {
-        LastFMSettings(navController, scrollBehavior)
-    }
-    composable("settings/misc") {
-        DebugSettings(navController)
-    }
     composable("settings/about") {
         AboutScreen(navController, scrollBehavior)
-    }
-    composable("settings/po_token") {
-        PoTokenScreen(navController, scrollBehavior)
     }
     composable("customize_background") {
         CustomizeBackground(navController)

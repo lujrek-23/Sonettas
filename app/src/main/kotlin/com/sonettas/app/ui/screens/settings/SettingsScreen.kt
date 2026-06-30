@@ -2,17 +2,15 @@
  * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
+ *
+ * Settings screen — single flat page, 6 items, no banners, no groups.
+ * Clean, minimal, Sonettas identity.
  */
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package com.sonettas.app.ui.screens.settings
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.os.Build
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
@@ -27,32 +25,25 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LargeFlexibleTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import com.sonettas.app.BuildConfig
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
 import com.sonettas.app.ui.component.IconButton
+import com.sonettas.app.ui.theme.SonettasDisplayFamily
+import com.sonettas.app.ui.theme.SonettasType
 import com.sonettas.app.ui.utils.backToMain
-// Sonettas: Updater import removed
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,70 +53,32 @@ fun SettingsScreen(
     latestVersionName: String,
     onClearUpdateBadge: () -> Unit = {},
 ) {
-    val context = LocalContext.current
-    val isAndroid12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+    val context = androidx.compose.ui.platform.LocalContext.current
     val listState = rememberLazyListState()
 
-    val storagePermission =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            Manifest.permission.READ_MEDIA_AUDIO
-        } else {
-            Manifest.permission.READ_EXTERNAL_STORAGE
-        }
-
-    val notificationPermission =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            Manifest.permission.POST_NOTIFICATIONS
-        } else {
-            null
-        }
-
-    var isStorageGranted by remember {
-        mutableStateOf(
-            ContextCompat.checkSelfPermission(context, storagePermission) == PackageManager.PERMISSION_GRANTED,
-        )
-    }
-
-    var isNotificationGranted by remember {
-        mutableStateOf(
-            notificationPermission == null ||
-                ContextCompat.checkSelfPermission(context, notificationPermission) == PackageManager.PERMISSION_GRANTED,
-        )
-    }
-
-    val permissionLauncher =
-        rememberLauncherForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions(),
-        ) { result ->
-            isStorageGranted = result[storagePermission] == true || isStorageGranted
-            if (notificationPermission != null) {
-                isNotificationGranted = result[notificationPermission] == true || isNotificationGranted
-            }
-        }
-
-    val shouldShowPermissionHint = !isStorageGranted || !isNotificationGranted
-    // Sonettas: Update checker removed — hasUpdate always false
-    val hasUpdate = false
-    var isUpdateDismissed by remember { mutableStateOf(false) }
-    val settingsGroups = buildSettingsGroups(navController, isAndroid12OrLater, hasUpdate, context)
-    val settingsItems =
-        remember(settingsGroups) {
-            settingsGroups.flatMap { it.items }
-        }
+    val settingsGroups = buildSettingsGroups(
+        navController = navController,
+        isAndroid12OrLater = false,
+        hasUpdate = false,
+        context = context,
+    )
+    val settingsItems = settingsGroups.flatMap { it.items }
 
     Scaffold(
-        modifier =
-            Modifier
-                .fillMaxSize()
-                .nestedScroll(scrollBehavior.nestedScrollConnection),
+        modifier = Modifier
+            .fillMaxSize()
+            .nestedScroll(scrollBehavior.nestedScrollConnection),
         containerColor = MaterialTheme.colorScheme.surface,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
-            LargeFlexibleTopAppBar(
+            TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(R.string.settings),
-                        fontWeight = FontWeight.Bold,
+                        text = "Pengaturan",
+                        style = SonettasType.titleLarge,
+                        fontFamily = SonettasDisplayFamily,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurface,
                     )
                 },
                 navigationIcon = {
@@ -135,15 +88,14 @@ fun SettingsScreen(
                     ) {
                         Icon(
                             painter = painterResource(R.drawable.arrow_back),
-                            contentDescription = stringResource(R.string.back_button_desc),
+                            contentDescription = null,
                         )
                     }
                 },
-                colors =
-                    TopAppBarDefaults.largeTopAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.surface,
-                        scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer,
-                    ),
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    scrolledContainerColor = MaterialTheme.colorScheme.surface,
+                ),
                 scrollBehavior = scrollBehavior,
             )
         },
@@ -151,67 +103,28 @@ fun SettingsScreen(
         LazyColumn(
             state = listState,
             verticalArrangement = Arrangement.spacedBy(2.dp),
-            modifier =
-                Modifier
-                    .fillMaxSize()
-                    .windowInsetsPadding(
-                        LocalPlayerAwareWindowInsets.current.only(
-                            WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom,
-                        ),
+            modifier = Modifier
+                .fillMaxSize()
+                .windowInsetsPadding(
+                    LocalPlayerAwareWindowInsets.current.only(
+                        WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom,
                     ),
-            contentPadding =
-                PaddingValues(
-                    top = innerPadding.calculateTopPadding(),
-                    bottom = SettingsDimensions.ScreenBottomPadding,
                 ),
+            contentPadding = PaddingValues(
+                top = innerPadding.calculateTopPadding(),
+                bottom = 80.dp,
+            ),
         ) {
-            if (hasUpdate && !isUpdateDismissed) {
-                item(key = "update", contentType = "settings_banner") {
-                    SettingsUpdateBanner(
-                        latestVersion = latestVersionName,
-                        onClick = { navController.navigate("settings/update") },
-                        onDismiss = { isUpdateDismissed = true },
-                        modifier =
-                            Modifier
-                                .padding(horizontal = SettingsDimensions.ScreenHorizontalPadding)
-                                .padding(bottom = SettingsDimensions.SectionSpacing),
-                    )
-                }
-            }
-
-            if (shouldShowPermissionHint) {
-                item(key = "permission", contentType = "settings_banner") {
-                    SettingsPermissionBanner(
-                        onRequestPermission = {
-                            val toRequest =
-                                buildList {
-                                    if (!isStorageGranted) add(storagePermission)
-                                    if (!isNotificationGranted && notificationPermission != null) {
-                                        add(notificationPermission)
-                                    }
-                                }
-                            if (toRequest.isNotEmpty()) {
-                                permissionLauncher.launch(toRequest.toTypedArray())
-                            }
-                        },
-                        modifier =
-                            Modifier
-                                .padding(horizontal = SettingsDimensions.ScreenHorizontalPadding)
-                                .padding(bottom = SettingsDimensions.SectionSpacing),
-                    )
-                }
-            }
-
             itemsIndexed(
                 items = settingsItems,
                 key = { _, item -> item.key },
-                contentType = { _, _ -> "settings_segment" },
+                contentType = { _, _ -> "settings_item" },
             ) { index, settingsItem ->
                 SettingsSegmentedItem(
                     item = settingsItem,
                     index = index,
                     count = settingsItems.size,
-                    modifier = Modifier.padding(horizontal = 26.dp),
+                    modifier = Modifier.padding(horizontal = 20.dp),
                 )
             }
         }
