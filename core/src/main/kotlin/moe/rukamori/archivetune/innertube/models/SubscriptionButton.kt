@@ -1,0 +1,22 @@
+/*
+ * Huasic (2026)
+ * © Huanime Company
+ * GPL-3.0 License
+ */
+
+package moe.rukamori.archivetune.innertube.models
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class SubscriptionButton(
+    val subscribeButtonRenderer: SubscribeButtonRenderer,
+) {
+    @Serializable
+    data class SubscribeButtonRenderer(
+        val subscribed: Boolean,
+        val channelId: String,
+        val subscriberCountText: Runs? = null,
+        val subscriberCountWithSubscribeText: Runs? = null,
+    )
+}

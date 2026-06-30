@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="sonettas_white">#FFFFFF</color>
+    <color name="sonettas_near_black">#0A0A0A</color>
+    <color name="sonettas_orange">#FF6B00</color>
+</resources>

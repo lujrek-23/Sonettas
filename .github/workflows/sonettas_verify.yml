@@ -1,0 +1,84 @@
+name: Sonettas Build Verification
+
+on:
+  push:
+    branches: ['main', 'dev']
+  pull_request:
+    branches: ['**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  verify:
+    name: Verify Sonettas Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+          cache-cleanup: on-success
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Generate debug keystore
+        run: |
+          mkdir -p ~/.android
+          if [ ! -f ~/.android/debug.keystore ]; then
+            keytool -genkey -v \
+              -keystore ~/.android/debug.keystore \
+              -storepass android \
+              -alias androiddebugkey \
+              -keypass android \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -dname "CN=Sonettas Debug,O=Huanime Company,C=ID"
+          fi
+
+      - name: Build Gms Universal Debug APK
+        run: ./gradlew --console=plain assembleGmsUniversalDebug --warning-mode summary
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          LASTFM_SECRET: ${{ secrets.LASTFM_SECRET }}
+          CANVAS_BEARER_TOKEN: ${{ secrets.CANVAS_BEARER_TOKEN }}
+
+      - name: Find APK location
+        run: find app/build/outputs -name "*.apk" -type f 2>/dev/null || echo "No APK found"
+
+      - name: Run Lint
+        run: ./gradlew --console=plain lintGmsUniversalDebug --warning-mode summary
+        continue-on-error: true
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sonettas-debug-apk
+          path: |
+            app/build/outputs/apk/**/*.apk
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload lint reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-reports
+          path: |
+            app/build/reports/lint-results-*.html
+            app/build/reports/lint-results-*.xml
+          retention-days: 7

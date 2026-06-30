@@ -1,0 +1,41 @@
+/*
+ * Huasic (2026)
+ * © Huanime Company
+ * GPL-3.0 License
+ */
+
+package moe.rukamori.archivetune.innertube.models.response
+
+import kotlinx.serialization.Serializable
+import moe.rukamori.archivetune.innertube.models.Continuation
+import moe.rukamori.archivetune.innertube.models.ContinuationItemRenderer
+import moe.rukamori.archivetune.innertube.models.MusicResponsiveListItemRenderer
+import moe.rukamori.archivetune.innertube.models.Tabs
+
+@Serializable
+data class SearchResponse(
+    val contents: Contents?,
+    val continuationContents: ContinuationContents?,
+) {
+    @Serializable
+    data class Contents(
+        val tabbedSearchResultsRenderer: Tabs?,
+    )
+
+    @Serializable
+    data class ContinuationContents(
+        val musicShelfContinuation: MusicShelfContinuation,
+    ) {
+        @Serializable
+        data class MusicShelfContinuation(
+            val contents: List<Content>,
+            val continuations: List<Continuation>?,
+        ) {
+            @Serializable
+            data class Content(
+                val musicResponsiveListItemRenderer: MusicResponsiveListItemRenderer? = null,
+                val continuationItemRenderer: ContinuationItemRenderer? = null,
+            )
+        }
+    }
+}

@@ -1,0 +1,17 @@
+/*
+ * Huasic (2026)
+ * © Huanime Company
+ * GPL-3.0 License
+ */
+
+package moe.rukamori.archivetune.innertube.models
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class MusicDescriptionShelfRenderer(
+    val header: Runs?,
+    val subheader: Runs?,
+    val description: Runs,
+    val footer: Runs?,
+)

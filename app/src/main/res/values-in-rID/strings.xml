@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Sonettas</string>
+
+    <!-- Tabs -->
+    <string name="tab_home">Beranda</string>
+    <string name="tab_search">Cari</string>
+    <string name="tab_library">Pustaka</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Hai, apa yang diputar?</string>
+    <string name="section_recently_played">Baru diputar</string>
+    <string name="section_quick_picks">Pilihan cepat</string>
+    <string name="section_for_you">Untuk kamu</string>
+    <string name="section_new_releases">Rilis baru</string>
+
+    <!-- Search -->
+    <string name="search_hint">Cari lagu, artis, album…</string>
+    <string name="search_recent">Pencarian terakhir</string>
+    <string name="search_no_results">Tidak ada hasil</string>
+
+    <!-- Library -->
+    <string name="lib_playlists">Playlist</string>
+    <string name="lib_songs">Lagu</string>
+    <string name="lib_artists">Artis</string>
+    <string name="lib_albums">Album</string>
+    <string name="lib_all">Semua</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_account">Akun</string>
+    <string name="settings_appearance">Tampilan</string>
+    <string name="settings_playback">Pemutaran</string>
+    <string name="settings_lyrics">Lirik</string>
+    <string name="settings_storage">Penyimpanan</string>
+    <string name="settings_about">Tentang</string>
+
+    <!-- Player -->
+    <string name="player_queue">Antrean</string>
+    <string name="player_lyrics">Lirik</string>
+</resources>
