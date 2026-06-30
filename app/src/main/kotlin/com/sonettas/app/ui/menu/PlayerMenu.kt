@@ -204,7 +204,7 @@ fun PlayerMenu(
         remember(librarySong?.song?.isLocal, mediaMetadata.id) {
             librarySong?.song?.isLocal == true || mediaMetadata.id.isLocalMediaId()
         }
-    // Huasic: castPlayerMenuAction removed
+    // Sonettas: castPlayerMenuAction removed
 
     // Split artists by configured separators
     data class SplitArtist(
@@ -463,7 +463,7 @@ fun PlayerMenu(
                 NewActionGrid(
                     actions =
                         buildList {
-                            // Huasic: castPlayerMenuAction removed
+                            // Sonettas: castPlayerMenuAction removed
                             if (!isLocalMedia) {
                                 add(
                                     NewAction(

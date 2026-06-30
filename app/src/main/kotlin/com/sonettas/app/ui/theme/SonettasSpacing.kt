@@ -4,7 +4,7 @@
  * GPL-3.0 License
  *
  * Spacing & motion tokens.
- * Different corner radius (12dp vs Huasic's 4dp).
+ * Different corner radius (12dp vs Sonettas's 4dp).
  * Different spacing scale.
  */
 
@@ -24,13 +24,13 @@ object SonettasSpacing {
 }
 
 object SonettasPadding {
-    val screen = 20.dp       // Huasic uses 24dp
-    val card = 16.dp         // Huasic uses 24dp
+    val screen = 20.dp       // Sonettas uses 24dp
+    val card = 16.dp         // Sonettas uses 24dp
     val cardLarge = 20.dp
-    val section = 28.dp      // Huasic uses 32dp
+    val section = 28.dp      // Sonettas uses 32dp
 }
 
-// Huasic: 2/4/8dp (sharp, editorial)
+// Sonettas: 2/4/8dp (sharp, editorial)
 // Sonettas: 8/12/16dp (rounded, modern)
 object SonettasRadius {
     val sm = 8.dp

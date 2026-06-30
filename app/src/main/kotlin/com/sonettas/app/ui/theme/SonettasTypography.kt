@@ -4,7 +4,7 @@
  * GPL-3.0 License
  *
  * Typography — Fraunces (display) + DM Sans (body).
- * Different from Huasic (Newsreader + Spline Sans).
+ * Different from Sonettas (Newsreader + Spline Sans).
  * Fraunces is more expressive, DM Sans is more geometric.
  */
 
@@ -17,7 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.sonettas.app.R
 
-// Font families — DIFFERENT from Huasic
+// Font families — DIFFERENT from Sonettas
 val SonettasDisplayFamily = FontFamily(
     Font(R.font.fraunces_variable, FontWeight.Normal),
     Font(R.font.fraunces_variable, FontWeight.SemiBold),
@@ -37,12 +37,12 @@ val SonettasMonoFamily = FontFamily(
 )
 
 object SonettasType {
-    // ── Display (Fraunces) — bolder, more expressive than Huasic ────────
+    // ── Display (Fraunces) — bolder, more expressive than Sonettas ────────
     val hero = TextStyle(
         fontFamily = SonettasDisplayFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 48.sp,
-        letterSpacing = (-1).sp,  // Tight tracking (Huasic uses +2sp)
+        letterSpacing = (-1).sp,  // Tight tracking (Sonettas uses +2sp)
         lineHeight = 52.sp,
     )
 
@@ -62,7 +62,7 @@ object SonettasType {
         lineHeight = 26.sp,
     )
 
-    // ── Body (DM Sans) — geometric, clean (Huasic uses Spline Sans) ─────
+    // ── Body (DM Sans) — geometric, clean (Sonettas uses Spline Sans) ─────
     val bodyLarge = TextStyle(
         fontFamily = SonettasBodyFamily,
         fontWeight = FontWeight.Normal,
@@ -87,7 +87,7 @@ object SonettasType {
         lineHeight = 20.sp,
     )
 
-    // ── Label — BOLD sans, NOT letter-spaced eyebrow like Huasic ────────
+    // ── Label — BOLD sans, NOT letter-spaced eyebrow like Sonettas ────────
     val label = TextStyle(
         fontFamily = SonettasBodyFamily,
         fontWeight = FontWeight.Bold,

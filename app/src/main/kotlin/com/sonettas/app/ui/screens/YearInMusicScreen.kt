@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -285,7 +285,7 @@ private fun YearInMusicRecapScreen(
                                     ComposeToImage.saveBitmapAsFile(
                                         context = context,
                                         bitmap = fitted,
-                                        fileName = "Huasic_YearInMusic_${content.selectedYear}_${currentPage + 1}",
+                                        fileName = "Sonettas_YearInMusic_${content.selectedYear}_${currentPage + 1}",
                                     )
                                 val shareIntent =
                                     Intent(Intent.ACTION_SEND).apply {
@@ -640,7 +640,7 @@ private fun IntroRecapCard(
             }
         }
 
-        HuasicBrand(
+        SonettasBrand(
             contentColor = Color.White,
             modifier = Modifier.align(Alignment.TopStart),
         )
@@ -1065,7 +1065,7 @@ private fun SummaryRecapCard(
                 )
             }
 
-            HuasicBrand(
+            SonettasBrand(
                 contentColor = RecapInk,
                 modifier = Modifier.align(Alignment.Start),
             )
@@ -1229,7 +1229,7 @@ private fun SummaryGuideLine(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun HuasicBrand(
+private fun SonettasBrand(
     contentColor: Color,
     modifier: Modifier = Modifier,
 ) {

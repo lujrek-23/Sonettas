@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB — AI service & translator removed from Huasic.
+ * STUB — AI service & translator removed from Sonettas.
  * AiLyricsDocument/AiLyricsSegment/AiLyricsDocumentParser remain in this
  * package because they are used by the regular translator (not AI).
  */

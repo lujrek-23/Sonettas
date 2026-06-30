@@ -428,13 +428,13 @@ class AboutViewModel
                             id = "github",
                             iconResId = R.drawable.github,
                             labelResId = R.string.about_content_desc_github,
-                            url = "https://github.com/HuanimeCompany/Huasic",
+                            url = "https://github.com/HuanimeCompany/Sonettas",
                         ),
                         AboutLinkUiModel(
                             id = "privacy_policy",
                             iconResId = R.drawable.lock,
                             labelResId = R.string.privacy,
-                            url = "https://github.com/HuanimeCompany/Huasic/blob/main/PRIVACY.md",
+                            url = "https://github.com/HuanimeCompany/Sonettas/blob/main/PRIVACY.md",
                         ),
                     ),
                 leadDeveloper =
@@ -510,6 +510,6 @@ class AboutViewModel
         private companion object {
             const val MaxDisplayedContributors = 20
             const val DebugBuildBadge = "DEBUG"
-            const val ContributorsReadMoreUrl = "https://github.com/HuanimeCompany/Huasic/graphs/contributors"
+            const val ContributorsReadMoreUrl = "https://github.com/HuanimeCompany/Sonettas/graphs/contributors"
         }
     }

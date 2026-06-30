@@ -3,7 +3,7 @@
  * © Huanime Company
  * GPL-3.0 License
  *
- * Greeting bar — bold sans, NOT serif like Huasic.
+ * Greeting bar — bold sans, NOT serif like Sonettas.
  * Simple: "Hai, apa yang diputar?" — one line, no eyebrow, no hairline.
  */
 

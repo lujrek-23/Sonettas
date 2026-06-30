@@ -81,7 +81,7 @@ private fun PlaybackSpotlightContent(context: Context) {
                     .background(palette.surface)
                     .cornerRadius(30.dp)
                     .padding(padding)
-                    .clickable(openHuasicAction(context)),
+                    .clickable(openSonettasAction(context)),
         ) {
             WidgetArtwork(
                 artPath = state.artPath,

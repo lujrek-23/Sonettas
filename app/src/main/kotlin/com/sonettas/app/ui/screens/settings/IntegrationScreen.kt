@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -51,7 +51,7 @@ fun IntegrationScreen(
             ),
         )
 
-        // Huasic: Hanya Last.fm yang dipertahankan
+        // Sonettas: Hanya Last.fm yang dipertahankan
         // Discord, Spotify, ListenBrainz, AI Music Together sudah dihapus
         PreferenceGroup(title = stringResource(R.string.scrobbling)) {
             item {

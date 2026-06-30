@@ -78,7 +78,7 @@ private fun PlaybackDeckContent(context: Context) {
                     .background(palette.surface)
                     .cornerRadius(30.dp)
                     .padding(if (size.height < 150.dp) 8.dp else 14.dp)
-                    .clickable(openHuasicAction(context)),
+                    .clickable(openSonettasAction(context)),
         ) {
             if (size.width < 260.dp || size.height < 150.dp) {
                 PlaybackDeckCompact(state = state, palette = palette, context = context)

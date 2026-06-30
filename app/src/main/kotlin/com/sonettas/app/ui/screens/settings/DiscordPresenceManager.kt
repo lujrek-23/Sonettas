@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  *
  * STUB — DiscordPresenceManager moved to discord package as a stub.

@@ -134,7 +134,7 @@ import com.sonettas.app.lyrics.LyricsUtils.shouldRomanizeLyricsLine
 import com.sonettas.app.lyrics.WordTimestamp
 import com.sonettas.app.ui.component.shimmer.ShimmerHost
 import com.sonettas.app.ui.component.shimmer.TextPlaceholder
-import com.sonettas.app.ui.theme.rememberHuasicLyricsFontFamily
+import com.sonettas.app.ui.theme.rememberSonettasLyricsFontFamily
 import com.sonettas.app.utils.rememberEnumPreference
 import com.sonettas.app.utils.rememberPreference
 import com.sonettas.app.utils.reportException
@@ -202,7 +202,7 @@ fun LyricsEnhanced(
             )
         }
 
-    val lyricsFontFamily = rememberHuasicLyricsFontFamily()
+    val lyricsFontFamily = rememberSonettasLyricsFontFamily()
 
     val playerBackground by rememberEnumPreference(PlayerBackgroundStyleKey, PlayerBackgroundStyle.DEFAULT)
     val textColor =

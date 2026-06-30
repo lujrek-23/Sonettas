@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -279,7 +279,7 @@ import com.sonettas.app.ui.utils.resetHeightOffset
 import com.sonettas.app.utils.PreferenceStore
 import com.sonettas.app.utils.SyncUtils
 import com.sonettas.app.utils.UpdaterStub as Updater
-// Huasic: Updater is a stub — update checker removed
+// Sonettas: Updater is a stub — update checker removed
 import com.sonettas.app.utils.dataStore
 import com.sonettas.app.utils.get
 import com.sonettas.app.utils.getAsync
@@ -292,7 +292,7 @@ import com.sonettas.app.viewmodels.BackupCategory
 import com.sonettas.app.viewmodels.BackupRestoreViewModel
 import com.sonettas.app.viewmodels.HomeViewModel
 import com.sonettas.app.viewmodels.NetworkBannerViewModel
-// Huasic: NewsViewModel import removed (feature deleted)
+// Sonettas: NewsViewModel import removed (feature deleted)
 import com.sonettas.app.viewmodels.OnlineSearchSort
 import com.sonettas.app.viewmodels.OnlineSearchViewModel
 import java.util.Locale
@@ -388,7 +388,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun joinPendingTogetherIfReady() {
-        // Huasic: Together feature removed — no-op stub.
+        // Sonettas: Together feature removed — no-op stub.
         pendingTogetherJoinLink = null
     }
 
@@ -524,7 +524,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val updateChannel by rememberEnumPreference(UpdateChannelKey, defaultValue = defaultUpdateChannel)
 
-            // Huasic: splash handled via windowBackground theme, no Compose splash
+            // Sonettas: splash handled via windowBackground theme, no Compose splash
 
             LaunchedEffect(Unit) {
                 while (playerConnection == null) {
@@ -826,11 +826,11 @@ class MainActivity : ComponentActivity() {
                     val coroutineScope = rememberCoroutineScope()
                     val homeViewModel: HomeViewModel = hiltViewModel()
                     val networkBannerViewModel: NetworkBannerViewModel = hiltViewModel()
-                    // Huasic: newsViewModel removed
+                    // Sonettas: newsViewModel removed
                     val allLocalItems by homeViewModel.allLocalItems.collectAsState()
                     val allYtItems by homeViewModel.allYtItems.collectAsState()
                     val networkBannerState by networkBannerViewModel.bannerState.collectAsStateWithLifecycle()
-                    // Huasic: hasUnreadNews removed
+                    // Sonettas: hasUnreadNews removed
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
                     val (previousTab) = rememberSaveable { mutableStateOf("home") }
                     val currentRoute = navBackStackEntry?.destination?.route
@@ -1344,7 +1344,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    // Huasic: StarDialog (donate popup) removed entirely
+                    // Sonettas: StarDialog (donate popup) removed entirely
 
                     val currentTitleRes =
                         remember(navBackStackEntry) {
@@ -1554,7 +1554,7 @@ class MainActivity : ComponentActivity() {
                                                             contentDescription = stringResource(R.string.history),
                                                         )
                                                     }
-                                                    // Huasic: news button removed entirely
+                                                    // Sonettas: news button removed entirely
                                                     TranslucentTopAppBarIconButton(
                                                         onClick = { navController.navigate("new_release") },
                                                     ) {
@@ -2227,7 +2227,7 @@ class MainActivity : ComponentActivity() {
             return
         }
         if (intent.action == ACTION_MUSIC_RECOGNITION) {
-            // Huasic: Music recognition removed — no-op
+            // Sonettas: Music recognition removed — no-op
             return
         }
         if (intent.action == ACTION_AOD_MODE) {

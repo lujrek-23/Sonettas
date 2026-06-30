@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  *
  * STUB — Spotify playlist screen removed.
@@ -18,5 +18,5 @@ fun SpotifyPlaylistScreen(
     navController: NavController,
     scrollBehavior: TopAppBarScrollBehavior,
 ) {
-    // Huasic: Spotify playlist screen removed
+    // Sonettas: Spotify playlist screen removed
 }

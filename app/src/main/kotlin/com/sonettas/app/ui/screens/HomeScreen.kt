@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -146,7 +146,7 @@ fun HomeScreen(
     }
 
     // Capture M3 Expressive colors from theme outside drawBehind
-    // Huasic: editorial palette — paper, ink, terracotta
+    // Sonettas: editorial palette — paper, ink, terracotta
     val color1 = Terracotta
     val color2 = Ink
     val color3 = Stone
@@ -295,8 +295,8 @@ fun HomeScreen(
                     state = lazylistState,
                     contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
                 ) {
-                    // Huasic signature greeting header
-                    item(key = "huasic_greeting") {
+                    // Sonettas signature greeting header
+                    item(key = "sonettas_greeting") {
                         GreetingBar(accountName = accountName)
                     }
 

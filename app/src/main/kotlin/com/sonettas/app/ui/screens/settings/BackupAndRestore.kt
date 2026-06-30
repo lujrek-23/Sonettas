@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -94,10 +94,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
-// Huasic: ShowSpotifyPlaylistsKey import removed
+// Sonettas: ShowSpotifyPlaylistsKey import removed
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.utils.rememberPreference
-// Huasic: Spotify imports removed
+// Sonettas: Spotify imports removed
 import com.sonettas.app.ui.component.DefaultDialog
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.component.PreferenceEntry
@@ -128,7 +128,7 @@ private val CSV_MIME_TYPES =
         "application/octet-stream",
     )
 
-// Huasic: Spotify constants removed
+// Sonettas: Spotify constants removed
 
 @Composable
 fun BackupAndRestore(
@@ -145,7 +145,7 @@ fun BackupAndRestore(
     var showRestoreOptionsDialog by rememberSaveable { mutableStateOf(false) }
     var showRestoreValidationError by rememberSaveable { mutableStateOf(false) }
     var restoreValidationErrorMessage by remember { mutableStateOf("") }
-    // Huasic: showSpotifyLogin state removed
+    // Sonettas: showSpotifyLogin state removed
     var pendingBackupCategories by remember { mutableStateOf(BackupCategory.entries.toSet()) }
     var pendingRestoreCategories by remember { mutableStateOf(BackupCategory.entries.toSet()) }
     var pendingRestoreUri by remember { mutableStateOf<Uri?>(null) }
@@ -254,7 +254,7 @@ fun BackupAndRestore(
             }
 
             PreferenceGroup(title = stringResource(R.string.external_service)) {
-                // Huasic: Spotify section removed
+                // Sonettas: Spotify section removed
             }
         }
 

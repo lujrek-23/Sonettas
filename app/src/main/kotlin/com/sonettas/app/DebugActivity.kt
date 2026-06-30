@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -385,7 +385,7 @@ private fun buildCrashReport(
 
     val header =
         buildString {
-            appendLine("Huasic crash report")
+            appendLine("Sonettas crash report")
             if (timestampText.isNotBlank()) appendLine("Time: $timestampText")
             val appVersionLabel =
                 when {

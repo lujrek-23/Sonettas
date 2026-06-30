@@ -1,9 +1,9 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  *
- * Struktur pengaturan Huasic — 3 grup:
+ * Struktur pengaturan Sonettas — 3 grup:
  * 1. "Personalisasi" — Akun, Tampilan, Pemutaran, Lirik
  * 2. "Konten & Jaringan" — Integrasi, Konten, Internet, Penyimpanan
  * 3. "Sistem & Tentang" — Statistik, Backup, Pengembang, Tentang
@@ -52,7 +52,7 @@ fun buildSettingsGroups(
                             key = "appearance",
                             icon = painterResource(R.drawable.palette),
                             title = "Tampilan",
-                            subtitle = "Tema, warna, dan layout Huasic",
+                            subtitle = "Tema, warna, dan layout Sonettas",
                             accentColor = Ink,
                             onClick = { navController.navigate("settings/appearance") },
                         ),
@@ -205,7 +205,7 @@ fun buildSettingsGroups(
                             SettingsItem(
                                 key = "about",
                                 icon = painterResource(R.drawable.info),
-                                title = "Tentang Huasic",
+                                title = "Tentang Sonettas",
                                 subtitle = "Versi, lisensi, dan kredit",
                                 accentColor = Stone,
                                 onClick = { navController.navigate("settings/about") },

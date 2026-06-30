@@ -3,7 +3,7 @@
  * © Huanime Company
  * GPL-3.0 License
  *
- * Bottom navigation — standard NavigationBar (NOT floating toolbar like Huasic).
+ * Bottom navigation — standard NavigationBar (NOT floating toolbar like Sonettas).
  * Clean, white, orange accent for active tab.
  */
 

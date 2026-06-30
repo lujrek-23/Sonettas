@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB FILE — Discord feature has been removed from Huasic.
+ * STUB FILE — Discord feature has been removed from Sonettas.
  * These types exist only to keep MainActivity.kt and MusicService.kt
  * compiling during the transitional cleanup period. All operations are no-ops.
  */

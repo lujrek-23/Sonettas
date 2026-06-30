@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB — Update checker removed from Huasic.
+ * STUB — Update checker removed from Sonettas.
  * Provides no-op compatibility for code that still references Updater.
  */
 

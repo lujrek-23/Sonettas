@@ -12,7 +12,7 @@ import com.sonettas.app.repository.LibraryTopMixRepository
 import javax.inject.Inject
 
 /**
- * Stub implementation — AI-powered library top mixes were removed in Huasic.
+ * Stub implementation — AI-powered library top mixes were removed in Sonettas.
  * Always returns Failure so callers degrade gracefully.
  */
 class RefreshLibraryTopMixesUseCase

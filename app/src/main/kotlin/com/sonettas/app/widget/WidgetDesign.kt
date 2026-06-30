@@ -221,7 +221,7 @@ internal fun WidgetControlButton(
     }
 }
 
-internal fun openHuasicAction(context: Context): Action =
+internal fun openSonettasAction(context: Context): Action =
     actionStartActivity(
         Intent(context, MainActivity::class.java).apply {
             action = Intent.ACTION_MAIN

@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB — Update notification removed from Huasic.
+ * STUB — Update notification removed from Sonettas.
  */
 
 package com.sonettas.app.utils

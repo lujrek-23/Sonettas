@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -517,7 +517,7 @@ fun Thumbnail(
                                                         )
                                                         seekDirection = context.getString(R.string.seek_forward_dynamic, skipAmount / 1000)
                                                     }
-                                                    // Huasic: Discord sync removed
+                                                    // Sonettas: Discord sync removed
                                                     // playerConnection.service.forceDiscordSync("thumbnail_double_tap_skip")
 
                                                     showSeekEffect = true

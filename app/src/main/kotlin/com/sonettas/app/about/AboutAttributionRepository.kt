@@ -209,7 +209,7 @@ class AboutAttributionRepository
                 client.get(GitHubCommitsUrl) {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Huasic")
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
                     }
                     parameter("path", path)
                     parameter("per_page", GitHubCommitsPageSize)
@@ -226,7 +226,7 @@ class AboutAttributionRepository
                 client.get(GitHubTranslationResourceUrl) {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Huasic")
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
                     }
                 }
             if (response.status.value !in SuccessStatusCodes) {
@@ -472,9 +472,9 @@ class AboutAttributionRepository
         )
 
         private companion object {
-            const val GitHubCommitsUrl = "https://api.github.com/repos/HuanimeCompany/Huasic/commits"
+            const val GitHubCommitsUrl = "https://api.github.com/repos/HuanimeCompany/Sonettas/commits"
             const val GitHubTranslationResourceUrl =
-                "https://api.github.com/repos/HuanimeCompany/Huasic/contents/app/src/main/res"
+                "https://api.github.com/repos/HuanimeCompany/Sonettas/contents/app/src/main/res"
             const val TranslationResourceRoot = "app/src/main/res"
             const val TranslationResourcePrefix = "values-"
             const val TranslationCommitMessagePrefix = "Translated using Weblate"

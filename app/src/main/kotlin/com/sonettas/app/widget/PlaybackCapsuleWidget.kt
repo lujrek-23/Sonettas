@@ -79,7 +79,7 @@ private fun PlaybackCapsuleContent(context: Context) {
                     .background(palette.surface)
                     .cornerRadius(30.dp)
                     .padding(if (compact) 6.dp else 8.dp)
-                    .clickable(openHuasicAction(context)),
+                    .clickable(openSonettasAction(context)),
         ) {
             PlaybackCapsuleLayout(
                 state = state,

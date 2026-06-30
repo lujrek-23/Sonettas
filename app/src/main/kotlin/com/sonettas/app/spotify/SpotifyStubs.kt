@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB — Spotify feature has been removed from Huasic.
+ * STUB — Spotify feature has been removed from Sonettas.
  */
 
 package com.sonettas.app.spotify

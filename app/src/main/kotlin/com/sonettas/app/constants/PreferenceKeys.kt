@@ -176,7 +176,7 @@ val LocalSongsExcludedFoldersKey = stringSetPreferencesKey("local_songs_excluded
 val LocalSongsSortTypeKey = stringPreferencesKey("local_songs_sort_type")
 val LocalSongsSortDescendingKey = booleanPreferencesKey("local_songs_sort_descending")
 
-// Huasic: Together keys kept as no-op for compatibility
+// Sonettas: Together keys kept as no-op for compatibility
 val TogetherDisplayNameKey = stringPreferencesKey("together_display_name")
 val TogetherClientIdKey = stringPreferencesKey("together_client_id")
 val TogetherDefaultPortKey = intPreferencesKey("together_default_port")
@@ -188,11 +188,11 @@ val TogetherWelcomeShownKey = booleanPreferencesKey("together_welcome_shown")
 val TogetherOnlineEndpointCacheKey = stringPreferencesKey("together_online_endpoint_cache")
 val TogetherOnlineEndpointLastCheckedAtKey = longPreferencesKey("together_online_endpoint_last_checked_at")
 
-// Huasic: ListenBrainz keys kept as no-op for compatibility
+// Sonettas: ListenBrainz keys kept as no-op for compatibility
 val ListenBrainzEnabledKey = booleanPreferencesKey("listenbrainz_enabled")
 val ListenBrainzTokenKey = stringPreferencesKey("listenbrainz_token")
 
-// Huasic: AI keys kept as no-op for compatibility
+// Sonettas: AI keys kept as no-op for compatibility
 val AiProviderKey = stringPreferencesKey("ai_provider")
 val AiCustomEndpointKey = stringPreferencesKey("ai_custom_endpoint")
 val AiApiKeyKey = stringPreferencesKey("ai_api_key")
@@ -289,7 +289,7 @@ val PauseListenHistoryKey = booleanPreferencesKey("pauseListenHistory")
 val PauseSearchHistoryKey = booleanPreferencesKey("pauseSearchHistory")
 val DisableScreenshotKey = booleanPreferencesKey("disableScreenshot")
 
-// Huasic: Discord keys kept as no-op for compatibility
+// Sonettas: Discord keys kept as no-op for compatibility
 val DiscordTokenKey = stringPreferencesKey("discordToken")
 val DiscordRefreshTokenKey = stringPreferencesKey("discordRefreshToken")
 val DiscordTokenExpiresAtKey = longPreferencesKey("discordTokenExpiresAt")
@@ -694,7 +694,7 @@ val AccountEmailKey = stringPreferencesKey("accountEmail")
 val AccountChannelHandleKey = stringPreferencesKey("accountChannelHandle")
 val SavedAccountsKey = stringPreferencesKey("savedAccounts")
 val UseLoginForBrowse = booleanPreferencesKey("useLoginForBrowse")
-// Huasic: Spotify keys kept as no-op for compatibility
+// Sonettas: Spotify keys kept as no-op for compatibility
 val SpotifySpDcKey = stringPreferencesKey("spotify_sp_dc")
 val SpotifySpKeyKey = stringPreferencesKey("spotify_sp_key")
 val SpotifyAccessTokenKey = stringPreferencesKey("spotify_access_token")
@@ -800,7 +800,7 @@ val OnboardingCompletedKey = booleanPreferencesKey("onboarding_completed")
 val HasPressedStarKey = booleanPreferencesKey("has_pressed_star")
 val RemindAfterKey = intPreferencesKey("remind_after")
 
-// Huasic: Update checker removed (channel kept for compatibility)
+// Sonettas: Update checker removed (channel kept for compatibility)
 val UpdateChannelKey = stringPreferencesKey("updateChannel")
 val LastNotifiedVersionKey = stringPreferencesKey("lastNotifiedVersion")
 val LastUpdateCheckKey = longPreferencesKey("lastUpdateCheck")

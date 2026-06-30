@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -80,7 +80,7 @@ import com.sonettas.app.constants.MiniPlayerHeight
 import com.sonettas.app.extensions.togglePlayPause
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.playback.PlayerConnection
-// Huasic: TogetherSessionState import removed
+// Sonettas: TogetherSessionState import removed
 import com.sonettas.app.utils.rememberPreference
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
@@ -517,7 +517,7 @@ fun NewMiniPlayerContent(
             )
         } ?: Spacer(Modifier.weight(1f))
 
-        // Huasic: Music Together indicator removed
+        // Sonettas: Music Together indicator removed
 
         Spacer(modifier = Modifier.width(12.dp))
 

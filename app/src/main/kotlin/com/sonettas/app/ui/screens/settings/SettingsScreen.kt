@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -52,7 +52,7 @@ import com.sonettas.app.LocalPlayerAwareWindowInsets
 import com.sonettas.app.R
 import com.sonettas.app.ui.component.IconButton
 import com.sonettas.app.ui.utils.backToMain
-// Huasic: Updater import removed
+// Sonettas: Updater import removed
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -104,7 +104,7 @@ fun SettingsScreen(
         }
 
     val shouldShowPermissionHint = !isStorageGranted || !isNotificationGranted
-    // Huasic: Update checker removed — hasUpdate always false
+    // Sonettas: Update checker removed — hasUpdate always false
     val hasUpdate = false
     var isUpdateDismissed by remember { mutableStateOf(false) }
     val settingsGroups = buildSettingsGroups(navController, isAndroid12OrLater, hasUpdate, context)

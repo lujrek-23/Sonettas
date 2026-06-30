@@ -2,7 +2,7 @@
  * Sonettas (2026)
  * © Huanime Company
  *
- * STUB — Music Recognition (Shazam) feature has been removed from Huasic.
+ * STUB — Music Recognition (Shazam) feature has been removed from Sonettas.
  */
 
 package com.sonettas.app.musicrecognition
@@ -31,7 +31,7 @@ class MusicRecognitionTileService : TileService() {
  * Returns immediately since feature is removed.
  */
 fun openMusicRecognition(context: Context) {
-    // Huasic: Music recognition removed — no-op
+    // Sonettas: Music recognition removed — no-op
 }
 
 /**

@@ -61,7 +61,7 @@ import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.sonettas.app.R
-import com.sonettas.app.ui.theme.rememberHuasicLyricsFontFamily
+import com.sonettas.app.ui.theme.rememberSonettasLyricsFontFamily
 
 @Stable
 private data class LyricsShareColors(
@@ -156,7 +156,7 @@ fun LyricsImageCard(
 ) {
     val context = LocalContext.current
     val density = LocalDensity.current
-    val lyricsFontFamily = rememberHuasicLyricsFontFamily()
+    val lyricsFontFamily = rememberSonettasLyricsFontFamily()
     val colors =
         remember(glassStyle, textColor, secondaryTextColor) {
             LyricsShareColors(

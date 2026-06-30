@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -191,7 +191,7 @@ fun DebugSettings(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             PreferenceGroup(title = stringResource(R.string.experimental_features)) {
-                // Huasic: Discord debug toggle removed
+                // Sonettas: Discord debug toggle removed
 
                 item {
                     SwitchPreference(
@@ -224,7 +224,7 @@ fun DebugSettings(navController: NavController) {
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     Spacer(modifier = Modifier.height(8.dp))
-                    // Huasic: Discord debug section removed
+                    // Sonettas: Discord debug section removed
                 }
             }
 
@@ -326,7 +326,7 @@ private fun LogViewerPanel() {
                 val tagMatch =
                     when (filterMode) {
                         0 -> {
-                            // Huasic: Discord filter removed
+                            // Sonettas: Discord filter removed
                             false
                         }
 
@@ -537,7 +537,7 @@ private fun LogViewerPanel() {
                     shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2),
                     icon = { },
                 ) {
-                    Text("Semua") // Huasic: filter_discord_only removed
+                    Text("Semua") // Sonettas: filter_discord_only removed
                 }
                 SegmentedButton(
                     selected = filterMode == 1,

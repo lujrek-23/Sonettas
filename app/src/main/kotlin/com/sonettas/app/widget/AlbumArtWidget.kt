@@ -81,7 +81,7 @@ private fun AlbumArtWidgetContent(context: Context) {
                     .background(palette.surface)
                     .cornerRadius(28.dp)
                     .padding(outerPadding)
-                    .clickable(openHuasicAction(context)),
+                    .clickable(openSonettasAction(context)),
         ) {
             WidgetArtwork(
                 artPath = state.artPath,

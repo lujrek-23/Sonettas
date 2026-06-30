@@ -425,7 +425,7 @@ class MusicService :
 
     private val normalizeFactor = MutableStateFlow(1f)
 
-    // Huasic: Together session state stub (feature removed)
+    // Sonettas: Together session state stub (feature removed)
     val togetherSessionState = MutableStateFlow<com.sonettas.app.together.TogetherSessionState>(
         com.sonettas.app.together.TogetherSessionState.Idle,
     )
@@ -442,7 +442,7 @@ class MusicService :
         key: String = "",
         action: (() -> Unit)? = null,
     ) {
-        // Huasic: Together notice — no-op (feature removed)
+        // Sonettas: Together notice — no-op (feature removed)
     }
     // Note: stopTogetherInternal() and getLocalIpv4Address() defined later in file
 
@@ -770,7 +770,7 @@ class MusicService :
         }
         wakeLock =
             (getSystemService(Context.POWER_SERVICE) as PowerManager)
-                .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Huasic:Playback")
+                .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Sonettas:Playback")
                 .also { it.setReferenceCounted(false) }
         setupAudioFocusRequest()
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, android.os.Handler(mainLooper))
@@ -2884,7 +2884,7 @@ class MusicService :
     }
 
     private suspend fun stopTogetherInternal() {
-        // Huasic: Together feature removed — no-op stub.
+        // Sonettas: Together feature removed — no-op stub.
         togetherServer = null
         togetherOnlineHost = null
         togetherClient = null
@@ -4341,7 +4341,7 @@ class MusicService :
         val hiResLosslessSelected = preferredStreamClient == PlayerStreamClient.HI_RES_LOSSLESS
         val authFingerprint =
             if (hiResLosslessSelected) {
-                "external:hi-res-lossless" // Huasic: HiRes stub
+                "external:hi-res-lossless" // Sonettas: HiRes stub
             } else {
                 YouTube.currentPlaybackAuthState().fingerprint
             }

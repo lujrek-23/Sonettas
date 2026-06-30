@@ -79,7 +79,7 @@ private fun ListeningInsightsContent(context: Context) {
                     .background(palette.surface)
                     .cornerRadius(30.dp)
                     .padding(if (compact) 10.dp else 14.dp)
-                    .clickable(openHuasicAction(context)),
+                    .clickable(openSonettasAction(context)),
         ) {
             if (compact) {
                 ListeningInsightsCompact(

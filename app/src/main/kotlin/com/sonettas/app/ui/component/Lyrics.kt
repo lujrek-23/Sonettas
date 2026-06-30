@@ -192,7 +192,7 @@ import com.sonettas.app.ui.component.shimmer.TextPlaceholder
 import com.sonettas.app.ui.menu.LyricsMenu
 import com.sonettas.app.ui.screens.settings.DarkMode
 import com.sonettas.app.ui.screens.settings.LyricsPosition
-import com.sonettas.app.ui.theme.rememberHuasicLyricsFontFamily
+import com.sonettas.app.ui.theme.rememberSonettasLyricsFontFamily
 import com.sonettas.app.ui.utils.fadingEdge
 import com.sonettas.app.ui.utils.smoothFadingEdge
 import com.sonettas.app.utils.ComposeToImage
@@ -207,10 +207,10 @@ import kotlin.time.Duration.Companion.seconds
 
 private val AppleMusicEasing = CubicBezierEasing(0.25f, 0.1f, 0.25f, 1.0f)
 private val SmoothDecelerateEasing = CubicBezierEasing(0.0f, 0.0f, 0.2f, 1.0f)
-private const val Huasic_AUTO_SCROLL_DURATION = 1500L
-private const val Huasic_INITIAL_SCROLL_DURATION = 1000L
-private const val Huasic_SEEK_DURATION = 800L
-private const val Huasic_FAST_SEEK_DURATION = 600L
+private const val SONETTAS_AUTO_SCROLL_DURATION = 1500L
+private const val SONETTAS_INITIAL_SCROLL_DURATION = 1000L
+private const val SONETTAS_SEEK_DURATION = 800L
+private const val SONETTAS_FAST_SEEK_DURATION = 600L
 private const val LyricsWordSyncLeadMs = 300L
 
 val LyricsPreviewTime = 2.seconds
@@ -469,7 +469,7 @@ fun Lyrics(
     val lyricsLineSpacing by rememberPreference(LyricsLineSpacingKey, 1.3f)
     val lyricsLineBlur by rememberPreference(LyricsLineBlurKey, true)
     val animationsDisabled = LocalAnimationsDisabled.current
-    val lyricsFontFamily = rememberHuasicLyricsFontFamily()
+    val lyricsFontFamily = rememberSonettasLyricsFontFamily()
 
     val verticalLineSpacing =
         with(LocalDensity.current) {

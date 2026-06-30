@@ -4,7 +4,7 @@
  * GPL-3.0 License
  *
  * Section card — shadow-based, rounded 12dp.
- * NOT hairline border like Huasic.
+ * NOT hairline border like Sonettas.
  */
 
 package com.sonettas.app.ui.component
@@ -40,7 +40,7 @@ fun SectionCard(
             .padding(horizontal = SonettasPadding.screen),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        // Bold sans title — NOT eyebrow + serif + hairline like Huasic
+        // Bold sans title — NOT eyebrow + serif + hairline like Sonettas
         Text(
             text = title,
             style = SonettasType.titleLarge,

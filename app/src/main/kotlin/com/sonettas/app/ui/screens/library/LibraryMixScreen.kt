@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -137,7 +137,7 @@ fun LibraryMixScreen(
             }
         }
 
-    val visibleSpotifyPlaylists = emptyList<Any>() // Huasic: Spotify removed
+    val visibleSpotifyPlaylists = emptyList<Any>() // Sonettas: Spotify removed
 
     LaunchedEffect(viewModel) {
         viewModel.topMixEvents.collect { message ->

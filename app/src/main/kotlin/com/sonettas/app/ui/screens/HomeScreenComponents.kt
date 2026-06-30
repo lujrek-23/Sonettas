@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -1030,7 +1030,7 @@ fun HomePageSectionContent(
  */
 @Composable
 fun HomeLoadingShimmer(modifier: Modifier = Modifier) {
-    // Huasic: editorial shimmer — paper-toned, no rainbow
+    // Sonettas: editorial shimmer — paper-toned, no rainbow
     com.sonettas.app.ui.component.SonettasHomeLoadingSkeleton(modifier = modifier)
 }
 

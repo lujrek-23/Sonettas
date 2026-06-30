@@ -458,7 +458,7 @@ class BackupRestoreViewModel
             val serializer = android.util.Xml.newSerializer()
             serializer.setOutput(outputStream, "UTF-8")
             serializer.startDocument("UTF-8", true)
-            serializer.startTag(null, "HuasicBackup")
+            serializer.startTag(null, "SonettasBackup")
             serializer.startTag(null, "Settings")
 
             for ((key, value) in prefs) {
@@ -490,7 +490,7 @@ class BackupRestoreViewModel
             }
 
             serializer.endTag(null, "Settings")
-            serializer.endTag(null, "HuasicBackup")
+            serializer.endTag(null, "SonettasBackup")
             serializer.endDocument()
             serializer.flush()
         }

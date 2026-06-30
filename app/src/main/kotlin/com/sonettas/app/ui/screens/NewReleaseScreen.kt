@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -203,7 +203,7 @@ fun NewReleaseScreen(
                             )
                             Spacer(Modifier.height(8.dp))
                             Text(
-                                text = "Huasic could not load this YouTube Music section. Try again later.",
+                                text = "Sonettas could not load this YouTube Music section. Try again later.",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 textAlign = TextAlign.Center,

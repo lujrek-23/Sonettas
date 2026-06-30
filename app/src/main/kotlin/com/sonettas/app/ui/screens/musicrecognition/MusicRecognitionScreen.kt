@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  *
  * STUB — Music Recognition screen removed.
@@ -12,5 +12,5 @@ import androidx.navigation.NavController
 
 @Composable
 fun MusicRecognitionScreen(navController: NavController) {
-    // Huasic: Music recognition removed — empty screen
+    // Sonettas: Music recognition removed — empty screen
 }

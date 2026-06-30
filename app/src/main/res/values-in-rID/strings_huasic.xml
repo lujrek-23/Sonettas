@@ -59,7 +59,7 @@
     <string name="play">Mainkan</string>
     <string name="widget_pause">Jeda</string>
     <string name="widget_previous">Sebelumnya</string>
-    <string name="widget_tap_to_open">Ketuk untuk membuka Huasic</string>
+    <string name="widget_tap_to_open">Ketuk untuk membuka Sonettas</string>
     <string name="play_next">Mainkan berikutnya</string>
     <string name="add_to_queue">Tambahkan ke antrean</string>
     <string name="add_to_library">Tambahkan ke pustaka</string>
@@ -274,7 +274,7 @@
     <string name="contrast">Kontras</string>
     <string name="brightness">Kecerahan</string>
     <string name="custom_value">Nilai khusus</string>
-    <string name="archivetune_canvas">Kanvas Huasic</string>
+    <string name="archivetune_canvas">Kanvas Sonettas</string>
     <string name="archivetune_canvas_desc">Menganimasikan sampul album saat diputar (Didukung oleh BetterLyrics)</string>
     <string name="dark_theme_follow_system">Ikuti sistem</string>
     <string name="pure_black">Hitam murni</string>
@@ -307,9 +307,9 @@
     <string name="login">Masuk</string>
     <string name="not_logged_in">Belum Masuk</string>
     <string name="playback_confirmation_required">Konfirmasi pemutaran diperlukan</string>
-    <string name="playback_requires_youtube_music_confirmation">Konfirmasikan pemutaran di YouTube Music, lalu kembali ke Huasic.</string>
+    <string name="playback_requires_youtube_music_confirmation">Konfirmasikan pemutaran di YouTube Music, lalu kembali ke Sonettas.</string>
     <string name="playback_login_refresh_required">Segarkan login YouTube Music</string>
-    <string name="playback_requires_youtube_music_login_refresh">Segarkan login YouTube Music Anda, lalu kembali ke Huasic.</string>
+    <string name="playback_requires_youtube_music_login_refresh">Segarkan login YouTube Music Anda, lalu kembali ke Sonettas.</string>
     <string name="could_not_open_youtube_music">Tidak dapat membuka YouTube Music</string>
     <string name="content_language">Bahasa konten default</string>
     <string name="content_country">Negara konten default</string>
@@ -575,9 +575,9 @@
     <string name="update_notification_channel_name">Pembaruan Aplikasi</string>
     <string name="update_notification_channel_desc">Pemberitahuan untuk pembaruan aplikasi baru</string>
     <string name="update_notification_title">Pembaruan Tersedia</string>
-    <string name="update_notification_text">Huasic %s kini tersedia</string>
+    <string name="update_notification_text">Sonettas %s kini tersedia</string>
     <string name="download">Unduh</string>
-    <string name="permissions_title">Izinkan Huasic bekerja dengan optimal</string>
+    <string name="permissions_title">Izinkan Sonettas bekerja dengan optimal</string>
     <string name="permissions_subtitle">Kami menggunakan beberapa izin untuk memutar dan mengelola musik Anda dengan andal. Anda dapat mengubahnya kapan saja di pengaturan sistem.</string>
     <string name="permission_storage_title">Akses penyimpanan</string>
     <string name="permission_storage_desc">Diperlukan untuk membaca file audio lokal dan unduhan Anda untuk diputar.</string>
@@ -590,7 +590,7 @@
     <string name="playlist_suggestion_source_title">Judul playlist</string>
     <string name="playlist_suggestion_source_content">Konten playlist</string>
     <string name="playlist_suggestion_source_both">Judul dan konten playlist</string>
-    <string name="music_together">Huasic Musik Bersama</string>
+    <string name="music_together">Sonettas Musik Bersama</string>
     <string name="together_online">Online</string>
     <string name="start_session">Mulai sesi</string>
     <string name="join_session">Bergabunglah dengan sesi</string>
@@ -640,7 +640,7 @@
     <string name="token_copied">Token disalin ke papan klip</string>
     <string name="extracting_from_url">Mengekstrak token dari URL…</string>
     <string name="po_token_account_notice_title">Gunakan akun yang sama</string>
-    <string name="po_token_account_notice_body">Masuk di sini dengan akun Google yang sama yang sudah Anda gunakan untuk YouTube Music di dalam Huasic sebelum membuat token PO.</string>
+    <string name="po_token_account_notice_body">Masuk di sini dengan akun Google yang sama yang sudah Anda gunakan untuk YouTube Music di dalam Sonettas sebelum membuat token PO.</string>
     <string name="po_token_account_notice_same_account">Jika WebView ini menggunakan akun lain, token yang dihasilkan tidak akan berfungsi dengan benar.</string>
     <string name="po_token_account_notice_mismatch">Gunakan akun yang cocok, selesaikan alur masuk, lalu buka youtube.com/account dan buat token dari halaman tersebut.</string>
     <string name="saved_accounts">Akun yang disimpan</string>
@@ -697,7 +697,7 @@
     <string name="library_top_mixes_refresh">Segarkan mix</string>
     <string name="library_top_mixes_configure_ai">Konfigurasikan AI</string>
     <string name="library_top_mixes_ai_not_configured_title">Konfigurasikan AI untuk membuat mix</string>
-    <string name="library_top_mixes_ai_not_configured_desc">Integrasi AI diperlukan sebelum Huasic dapat membuat mix teratas pribadi.</string>
+    <string name="library_top_mixes_ai_not_configured_desc">Integrasi AI diperlukan sebelum Sonettas dapat membuat mix teratas pribadi.</string>
     <string name="library_top_mixes_no_recent_history_title">Tidak ada riwayat mix mendengarkan saat ini</string>
     <string name="library_top_mixes_no_recent_history">Dengarkan lagu lainnya, kemudian segarkan untuk membuat mix AI dari riwayat mendengarkan anda.</string>
 </resources>

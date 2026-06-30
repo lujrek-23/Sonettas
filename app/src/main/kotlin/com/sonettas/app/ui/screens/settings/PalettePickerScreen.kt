@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -1238,7 +1238,7 @@ fun ThemeCreatorScreen(navController: NavController) {
                         val safeName =
                             themeName
                                 .trim()
-                                .ifBlank { "Huasic Theme" }
+                                .ifBlank { "Sonettas Theme" }
                                 .replace(Regex("[^a-zA-Z0-9 _\\-]"), "_")
                                 .take(64)
                         exportLauncher.launch("$safeName.json")

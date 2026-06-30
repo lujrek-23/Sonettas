@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -477,7 +477,7 @@ fun AccountSettings(
 
                     ExpressiveDivider()
 
-                    // Huasic: Music Together entry removed
+                    // Sonettas: Music Together entry removed
                 }
             }
 

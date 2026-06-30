@@ -141,7 +141,7 @@ class AboutContributorsRepository
                 client.get("https://api.github.com/repos/$owner/$repo/contributors?per_page=$perPage") {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "Huasic")
+                        append("User-Agent", "Sonettas (https://github.com/HuanimeCompany/Sonettas)"
                     }
                 }
             return ContributorsNetworkResult(
@@ -194,6 +194,6 @@ class AboutContributorsRepository
         private companion object {
             const val ContributorsLimit = 20
             const val GitHubOwner = "HuanimeCompany"
-            const val GitHubRepo = "Huasic"
+            const val GitHubRepo = "Sonettas"
         }
     }

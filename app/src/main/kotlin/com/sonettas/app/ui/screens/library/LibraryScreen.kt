@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -89,7 +89,7 @@ fun LibraryScreen(navController: NavController) {
     val (showTagsInLibrary) = rememberPreference(ShowTagsInLibraryKey, defaultValue = true)
     var showTagsManagementDialog by rememberSaveable { mutableStateOf(false) }
     val activeSelectedTagIds = if (showTagsInLibrary) selectedTagIds else emptySet()
-    // Huasic: Spotify tab removed - always use base library filters
+    // Sonettas: Spotify tab removed - always use base library filters
     val libraryFilters =
         listOf(
             LibraryFilter.LIBRARY,

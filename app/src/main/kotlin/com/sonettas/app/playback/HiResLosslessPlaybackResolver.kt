@@ -19,5 +19,5 @@ object HiResLosslessPlaybackResolver {
     )
 
     fun resolve(identity: TrackIdentity): Result<YTPlayerUtils.PlaybackData> =
-        Result.failure(UnsupportedOperationException("Hi-Res Lossless resolver not available in Huasic"))
+        Result.failure(UnsupportedOperationException("Hi-Res Lossless resolver not available in Sonettas"))
 }

@@ -1,5 +1,5 @@
 /*
- * Huasic (2026)
+ * Sonettas (2026)
  * © Huanime Company
  * GPL-3.0 License
  */
@@ -843,7 +843,7 @@ fun AppearanceSettings(
                             LibraryFilter.ARTISTS -> stringResource(R.string.artists)
                             LibraryFilter.ALBUMS -> stringResource(R.string.albums)
                             LibraryFilter.PLAYLISTS -> stringResource(R.string.playlists)
-                            // Huasic: LibraryFilter.SPOTIFY removed
+                            // Sonettas: LibraryFilter.SPOTIFY removed
                             LibraryFilter.LIBRARY -> stringResource(R.string.filter_library)
                         }
                     },

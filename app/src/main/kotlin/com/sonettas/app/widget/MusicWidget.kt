@@ -118,7 +118,7 @@ private fun MusicWidgetBar(
                 .background(palette.surface)
                 .cornerRadius(28.dp)
                 .padding(6.dp)
-                .clickable(openHuasicAction(context)),
+                .clickable(openSonettasAction(context)),
     ) {
         Column(modifier = GlanceModifier.fillMaxSize()) {
             Row(
@@ -185,7 +185,7 @@ private fun MusicWidgetPanel(
                 .background(palette.surface)
                 .cornerRadius(28.dp)
                 .padding(16.dp)
-                .clickable(openHuasicAction(context)),
+                .clickable(openSonettasAction(context)),
     ) {
         Column(modifier = GlanceModifier.fillMaxSize()) {
             Row(

@@ -240,7 +240,7 @@ class LyricsMenuViewModel
             mediaMetadata: MediaMetadata,
             lyrics: String,
         ) {
-            // Huasic: AI lyrics translation removed — no-op
+            // Sonettas: AI lyrics translation removed — no-op
         }
 
         companion object {

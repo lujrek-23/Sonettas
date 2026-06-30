@@ -150,7 +150,7 @@ import com.sonettas.app.lyrics.WordTimestamp
 import com.sonettas.app.ui.component.shimmer.ShimmerHost
 import com.sonettas.app.ui.component.shimmer.TextPlaceholder
 import com.sonettas.app.ui.screens.settings.LyricsPosition
-import com.sonettas.app.ui.theme.rememberHuasicLyricsFontFamily
+import com.sonettas.app.ui.theme.rememberSonettasLyricsFontFamily
 import com.sonettas.app.ui.utils.smoothFadingEdge
 import com.sonettas.app.utils.ComposeToImage
 import com.sonettas.app.utils.rememberEnumPreference
@@ -246,7 +246,7 @@ fun LyricsV2(
                 romanizeOther = romanizeOtherLanguages,
             )
         }
-    val lyricsFontFamily = rememberHuasicLyricsFontFamily()
+    val lyricsFontFamily = rememberSonettasLyricsFontFamily()
     val playerBackground by rememberEnumPreference(PlayerBackgroundStyleKey, PlayerBackgroundStyle.DEFAULT)
 
     // ── Text colour derived from background style ──
