@@ -23,7 +23,7 @@ data class SavedArtwork(
 )
 
 object ArtworkStorage {
-    private const val FILENAME = "archivetune_saved_artworks.json"
+    private const val FILENAME = "sonettas_saved_artworks.json"
     private val json =
         Json {
             prettyPrint = true

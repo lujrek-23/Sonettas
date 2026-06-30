@@ -637,8 +637,8 @@ fun AppearanceSettings(
 
             item {
                 SwitchPreference(
-                    title = { Text(stringResource(R.string.archivetune_canvas)) },
-                    description = stringResource(R.string.archivetune_canvas_desc),
+                    title = { Text(stringResource(R.string.sonettas_canvas)) },
+                    description = stringResource(R.string.sonettas_canvas_desc),
                     icon = { Icon(painterResource(R.drawable.motion_photos_on), null) },
                     checked = archiveTuneCanvasEnabled,
                     onCheckedChange = onSonettasCanvasEnabledChange,

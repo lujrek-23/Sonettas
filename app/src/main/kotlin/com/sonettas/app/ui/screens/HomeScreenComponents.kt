@@ -97,13 +97,13 @@ import com.sonettas.app.db.entities.Playlist
 import com.sonettas.app.db.entities.Song
 import com.sonettas.app.extensions.toMediaItem
 import com.sonettas.app.extensions.togglePlayPause
-import moe.rukamori.archivetune.innertube.models.AlbumItem
-import moe.rukamori.archivetune.innertube.models.ArtistItem
-import moe.rukamori.archivetune.innertube.models.PlaylistItem
-import moe.rukamori.archivetune.innertube.models.SongItem
-import moe.rukamori.archivetune.innertube.models.WatchEndpoint
-import moe.rukamori.archivetune.innertube.models.YTItem
-import moe.rukamori.archivetune.innertube.pages.HomePage
+import com.sonettas.app.innertube.models.AlbumItem
+import com.sonettas.app.innertube.models.ArtistItem
+import com.sonettas.app.innertube.models.PlaylistItem
+import com.sonettas.app.innertube.models.SongItem
+import com.sonettas.app.innertube.models.WatchEndpoint
+import com.sonettas.app.innertube.models.YTItem
+import com.sonettas.app.innertube.pages.HomePage
 import com.sonettas.app.models.MediaMetadata
 import com.sonettas.app.models.SimilarRecommendation
 import com.sonettas.app.models.toMediaMetadata
@@ -433,7 +433,7 @@ fun SpeedDialSection(
                                     title = localItem.title,
                                     artists =
                                         localItem.artists.map {
-                                            moe.rukamori.archivetune.innertube.models
+                                            com.sonettas.app.innertube.models
                                                 .Artist(name = it.name, id = it.id)
                                         },
                                     thumbnail = localItem.song.thumbnailUrl.orEmpty(),
@@ -448,7 +448,7 @@ fun SpeedDialSection(
                                     title = localItem.title,
                                     artists =
                                         localItem.artists.map {
-                                            moe.rukamori.archivetune.innertube.models
+                                            com.sonettas.app.innertube.models
                                                 .Artist(name = it.name, id = it.id)
                                         },
                                     year = localItem.album.year,

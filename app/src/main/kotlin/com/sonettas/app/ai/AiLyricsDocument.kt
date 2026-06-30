@@ -119,7 +119,7 @@ object AiLyricsDocumentParser {
                 val segmentId = segments.size
                 val lineKey =
                     readAttributeBySuffix(element, "key")
-                        ?: "archivetune-translation-$segmentId".also { key -> element.setAttribute("key", key) }
+                        ?: "sonettas-translation-$segmentId".also { key -> element.setAttribute("key", key) }
                 segments.add(AiLyricsSegment(segmentId, text))
                 paragraphs.add(TtmlParagraph(element = element, segmentId = segmentId, key = lineKey))
             }
@@ -213,7 +213,7 @@ private data class TtmlLyricsDocument(
             val metadata = findOrCreateMetadataElement(document, document.documentElement)
             val translationElement =
                 document.createElement("translation").apply {
-                    setAttribute("data-archivetune", "translation")
+                    setAttribute("data-sonettas", "translation")
                 }
 
             translatedParagraphs.forEach { (paragraph, translated) ->
@@ -236,7 +236,7 @@ private data class TtmlLyricsDocument(
         for (index in 0 until elements.length) {
             val element = elements.item(index) as? Element ?: continue
             if (element.tagName.endsWith("translation", ignoreCase = true) &&
-                element.getAttribute("data-archivetune") == "translation"
+                element.getAttribute("data-sonettas") == "translation"
             ) {
                 removableElements.add(element)
             }

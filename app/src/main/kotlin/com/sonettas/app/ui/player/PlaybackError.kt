@@ -158,7 +158,7 @@ fun PlaybackError(
                 {
                     when (recoveryAction) {
                         PlaybackRecoveryAction.RefreshLogin -> {
-                            val deepLink = Uri.parse("archivetune://login?url=${Uri.encode(recoveryUrl)}")
+                            val deepLink = Uri.parse("sonettas://login?url=${Uri.encode(recoveryUrl)}")
                             val loginIntent =
                                 Intent(Intent.ACTION_VIEW, deepLink, context, MainActivity::class.java).apply {
                                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

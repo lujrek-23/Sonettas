@@ -274,8 +274,8 @@
     <string name="contrast">Kontras</string>
     <string name="brightness">Kecerahan</string>
     <string name="custom_value">Nilai khusus</string>
-    <string name="archivetune_canvas">Kanvas Sonettas</string>
-    <string name="archivetune_canvas_desc">Menganimasikan sampul album saat diputar (Didukung oleh BetterLyrics)</string>
+    <string name="sonettas_canvas">Kanvas Sonettas</string>
+    <string name="sonettas_canvas_desc">Menganimasikan sampul album saat diputar (Didukung oleh BetterLyrics)</string>
     <string name="dark_theme_follow_system">Ikuti sistem</string>
     <string name="pure_black">Hitam murni</string>
     <string name="disable_blur">Nonaktifkan efek blur</string>

@@ -693,7 +693,7 @@ private fun File.ensureWritableDirectory(): Boolean =
     runCatching {
         if (exists() && !isDirectory) return@runCatching false
         if (!exists() && !mkdirs()) return@runCatching false
-        val probe = File(this, ".archivetune-storage-probe")
+        val probe = File(this, ".sonettas-storage-probe")
         probe.writeText("ok")
         probe.delete()
     }.isSuccess
@@ -930,4 +930,4 @@ private const val ExternalStorageRootDirectoryName = "Sonettas"
 private const val AppRestartDelayMillis = 3_000L
 private const val StorageCopyBufferSizeBytes = 64 * 1024
 private const val CanvasArtworkCacheFileName = "canvas_artwork_cache.json"
-private const val SavedArtworkCacheFileName = "archivetune_saved_artworks.json"
+private const val SavedArtworkCacheFileName = "sonettas_saved_artworks.json"

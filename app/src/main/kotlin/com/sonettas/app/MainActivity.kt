@@ -2337,14 +2337,14 @@ class MainActivity : ComponentActivity() {
         val coroutineScope = lifecycleScope
 
         val authority = uri.authority?.lowercase()
-        if (uri.scheme.equals("archivetune", ignoreCase = true) && authority == "together") {
+        if (uri.scheme.equals("sonettas", ignoreCase = true) && authority == "together") {
             pendingTogetherJoinLink = uri.toString()
             startMusicServiceSafely()
             joinPendingTogetherIfReady()
             return
         }
 
-        if (uri.scheme.equals("archivetune", ignoreCase = true) && authority == "login") {
+        if (uri.scheme.equals("sonettas", ignoreCase = true) && authority == "login") {
             navController.navigate(buildLoginRoute(uri.getQueryParameter(LOGIN_URL_ARGUMENT)))
             return
         }
