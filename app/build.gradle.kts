@@ -48,6 +48,7 @@ android {
         buildConfigField("String", "CANVAS_BEARER_TOKEN", "\"$canvasBearerToken\"")
         buildConfigField("String", "DISTRIBUTION", "\"gms\"")
         buildConfigField("boolean", "UPDATER_AVAILABLE", "false")
+        buildConfigField("String", "NIGHTLY_BUILD_HASH", "\"\"")
     }
 
     flavorDimensions += listOf("distribution", "abi")
